@@ -21,9 +21,11 @@
         "strictFunctionTypes": true,
         "strictPropertyInitialization": true,
         "downlevelIteration": true,
+        "allowSyntheticDefaultImports": true,
         "resolveJsonModule": true,
         "stripInternal": true,
         "esModuleInterop": true,
+        "importHelpers": true,
         "typeRoots": [
             "node_modules/@types"
         ]
