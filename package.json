@@ -1,0 +1,31 @@
+{
+  "name": "bolt-iot-wrapper",
+  "version": "1.0.0",
+  "description": "bolt iot api wrappers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranaydutta89/bolt-iot-wrapper.git"
+  },
+  "keywords": [
+    "bolt",
+    "iot",
+    "api",
+    "wrapper"
+  ],
+  "author": "Pranay Dutta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranaydutta89/bolt-iot-wrapper/issues"
+  },
+  "homepage": "https://github.com/pranaydutta89/bolt-iot-wrapper#readme",
+  "devDependencies": {
+    "node-fetch": "2.3.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "3.3.3333",
+    "@types/node-fetch": "2.1.6"
+  }
+}
