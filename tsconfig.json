@@ -13,7 +13,6 @@
         "allowUnusedLabels": false,
         "noImplicitAny": true,
         "noImplicitReturns": true,
-        "noImplicitUseStrict": true,
         "outDir": "dist/",
         "noEmitHelpers": true,
         "alwaysStrict": true,
