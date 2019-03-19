@@ -1,6 +1,6 @@
 import Base from "./Base";
 
-export default class Configure extends Base {
+class Configure extends Base {
 
     public config(deviceName: string, apiKey: string) {
 
@@ -14,3 +14,5 @@ export default class Configure extends Base {
         }
     }
 }
+
+export default new Configure();

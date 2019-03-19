@@ -9,6 +9,7 @@ export default class Digital extends Base {
     private api: Api = new Api();
     constructor() {
         super();
+        this.checkConfig();
     }
 
     async loopRead(pins: PINS | PINS[], time: number, cb: (...args: any[]) => void) {

@@ -5,6 +5,11 @@ export default class Analog extends Base {
 
     private api: Api = new Api();
 
+    constructor() {
+        super();
+        this.checkConfig();
+    }
+
     async loopRead(time: number, cb: (...args: any[]) => void) {
         if (time < 5000) {
             throw new Error('Time cannot be less than 5000 ms')
