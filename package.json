@@ -2,9 +2,11 @@
   "name": "bolt-iot-wrapper",
   "version": "1.0.0",
   "description": "bolt iot api wrappers",
-  "main": "dist/exports.js",
+  "main": "dist/exports.amd.js",
   "scripts": {
-    "build": "rimraf dist && parcel build src/exports.ts"
+    "build": "rimraf dist && npm run buildBrowser && npm run buildNode",
+    "buildBrowser": "parcel build src/exports.ts -o exports.cjs.js",
+    "buildNode": "parcel build src/exports.ts --target node -o exports.amd.js"
   },
   "repository": {
     "type": "git",
