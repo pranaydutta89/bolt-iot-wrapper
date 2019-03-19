@@ -2,9 +2,9 @@
   "name": "bolt-iot-wrapper",
   "version": "1.0.0",
   "description": "bolt iot api wrappers",
-  "main": "index.js",
+  "main": "dist/exports.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf dist && parcel build src/exports.ts"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,8 @@
     "node-fetch": "2.3.0",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "3.3.3333",
-    "@types/node-fetch": "2.1.6"
+    "@types/node-fetch": "2.1.6",
+    "rimraf": "2.6.3",
+    "parcel": "1.12.2"
   }
 }
