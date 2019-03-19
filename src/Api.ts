@@ -15,7 +15,11 @@ export default class Api extends Base {
 
         try {
             const fullUrl = `${this.BaseUrl}/${this.ApiKey}/${functi}?deviceName=${this.DeviceName}&${query}`;
-            const res = await fetch(fullUrl);
+            const res = await fetch(fullUrl, {
+                headers: {
+                    'Cache-Control': "no-cache"
+                }
+            });
             const data: IResponseData = await res.json();
             if (data.success === '1') {
                 return data;

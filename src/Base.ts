@@ -6,6 +6,7 @@ export default abstract class Base {
     private static configDone: boolean = false;
     private baseUrl = 'https://cloud.boltiot.com/remote';
 
+
     protected checkConfig() {
         if (!this.ConfigDone) {
             throw new Error('Configuration not done');
@@ -38,5 +39,13 @@ export default abstract class Base {
 
     protected get ConfigDone() {
         return Base.configDone;
+    }
+
+    protected setTimeoutAsync(time: number) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve();
+            }, time)
+        })
     }
 }
