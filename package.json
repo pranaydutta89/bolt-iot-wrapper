@@ -30,6 +30,7 @@
     "typescript": "3.3.3333",
     "@types/node-fetch": "2.1.6",
     "rimraf": "2.6.3",
+    "tslint": "5.14.0",
     "parcel": "1.12.2"
   }
 }
