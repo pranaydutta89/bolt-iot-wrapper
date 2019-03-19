@@ -25,7 +25,7 @@ export default class Analog extends Base {
         }
     }
     async read(): Promise<number> {
-        const data = await this.api.getData('analogRead', `A0`);
+        const data = await this.api.getData('analogRead', `pin=A0`);
         return parseInt(data.value, 10);
     }
 }
