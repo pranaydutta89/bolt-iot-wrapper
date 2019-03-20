@@ -1,6 +1,7 @@
-import fetch from "node-fetch";
+import xhr, { XhrResponse } from "xhr";
 import Base from "./Base";
 import { IResponseData } from "./Interfaces";
+import { resolve } from 'url';
 
 
 
@@ -15,17 +16,34 @@ export default class Api extends Base {
 
         try {
             const fullUrl = `${this.BaseUrl}/${this.ApiKey}/${functi}?deviceName=${this.DeviceName}&${query}`;
-            const res = await fetch(fullUrl, {
-                headers: {
-                    'Cache-Control': "no-cache"
-                }
-            });
-            const data: IResponseData = await res.json();
-            if (data.success === '1') {
-                return data;
-            }
+            const data: IResponseData = await new Promise((resolve, reject) => {
+                xhr({
+                    method: "GET",
+                    uri: fullUrl,
+                    headers: {
+                        'Cache-Control': "no-cache"
+                    }
+                }, (err: Error, resp: XhrResponse, body: any) => {
 
-            throw new Error('Cloud responsed with failure')
+                    if (err) {
+                        return reject(err);
+                    }
+
+                    if (resp.statusCode === 200) {
+                        if (body.success === '1') {
+                            return resolve(body);
+                        }
+                        else {
+                            return reject(body);
+                        }
+                    }
+                    else {
+                        return reject(resp);
+                    }
+                })
+            })
+
+            return data;
         }
         catch (e) {
             return Promise.reject(e.message)

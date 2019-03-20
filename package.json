@@ -4,7 +4,8 @@
   "description": "bolt iot api wrappers",
   "main": "dist/exports.js",
   "scripts": {
-    "build": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc && npm run buildBrowser",
+    "buildBrowser": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -23,12 +24,20 @@
   },
   "homepage": "https://github.com/pranaydutta89/bolt-iot-wrapper#readme",
   "devDependencies": {
-    "node-fetch": "2.3.0",
-    "tslint-config-airbnb": "^5.11.1",
-    "typescript": "3.3.3333",
-    "@types/node-fetch": "2.1.6",
     "rimraf": "2.6.3",
+    "rollup": "1.6.0",
+    "rollup-plugin-typescript": "1.0.0",
+    "rollup-plugin-node-resolve": "4.0.1",
+    "rollup-plugin-commonjs": "9.2.1",
+    "rollup-plugin-uglify": "6.0.2",
     "tslint": "5.14.0",
-    "parcel": "1.12.2"
-  }
+    "tslint-config-airbnb": "5.11.1",
+    "typescript": "3.3.3333"
+  },
+  "dependencies": {
+    "xhr": "2.5.0"
+  },
+  "files": [
+    "umd"
+  ]
 }
