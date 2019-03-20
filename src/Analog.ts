@@ -1,5 +1,6 @@
 import Base from "./Base";
 import Api from "./Api";
+import { CONSTANTS } from './Enums';
 
 export default class Analog extends Base {
 
@@ -11,8 +12,8 @@ export default class Analog extends Base {
     }
 
     async loopRead(time: number, cb: (...args: any[]) => void) {
-        if (time < 5000) {
-            throw new Error('Time cannot be less than 5000 ms')
+        if (time < CONSTANTS.defaultLoopTime) {
+            throw new Error(`Time cannot be less than ${CONSTANTS.defaultLoopTime} ms`)
         }
         else {
             while (1) {

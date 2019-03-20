@@ -11,3 +11,8 @@ export enum STATE {
     high = 'HIGH',
     low = 'LOW'
 }
+
+export enum CONSTANTS {
+    defaultLoopTime = 3100,
+    defaultApiDiff = 3000
+}

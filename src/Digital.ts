@@ -1,5 +1,5 @@
 import Base from "./Base";
-import { PINS, STATE } from "./Enums";
+import { PINS, STATE, CONSTANTS } from "./Enums";
 import { IDigitalParam, IDigitalReturn } from "./Interfaces";
 import Api from "./Api";
 
@@ -13,8 +13,8 @@ export default class Digital extends Base {
     }
 
     async loopRead(pins: PINS | PINS[], time: number, cb: (...args: any[]) => void) {
-        if (time < 5000) {
-            throw new Error('Time cannot be less than 5000 ms')
+        if (time < CONSTANTS.defaultLoopTime) {
+            throw new Error(`Time cannot be less than ${CONSTANTS.defaultLoopTime} ms`)
         }
         else {
             while (1) {
