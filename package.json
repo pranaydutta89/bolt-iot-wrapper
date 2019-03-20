@@ -5,7 +5,9 @@
   "main": "dist/exports.js",
   "scripts": {
     "build": "rimraf dist && tsc && npm run buildBrowser",
-    "buildBrowser": "rollup -c"
+    "buildBrowser": "rollup -c",
+    "prerelease": "npm run build",
+    "release": "np"
   },
   "repository": {
     "type": "git",
@@ -32,12 +34,16 @@
     "rollup-plugin-uglify": "6.0.2",
     "tslint": "5.14.0",
     "tslint-config-airbnb": "5.11.1",
-    "typescript": "3.3.3333"
+    "typescript": "3.3.3333",
+    "np": "*"
   },
   "dependencies": {
     "xhr": "2.5.0"
   },
   "files": [
-    "dist"
-  ]
+    "umd"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

@@ -17,7 +17,7 @@ export default {
     ],
     output: {
         name: 'main',
-        file: './dist/main.umd.js',
+        file: './umd/boltIotWrapper.min.js',
         format: 'umd',
         sourcemap: true,
         strict: true
