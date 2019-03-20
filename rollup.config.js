@@ -19,7 +19,6 @@ export default {
         name: 'main',
         file: './umd/boltIotWrapper.min.js',
         format: 'umd',
-        sourcemap: true,
         strict: true
     }
 
