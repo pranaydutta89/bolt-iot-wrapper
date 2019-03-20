@@ -41,7 +41,8 @@
     "xhr": "2.5.0"
   },
   "files": [
-    "umd"
+    "umd",
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
