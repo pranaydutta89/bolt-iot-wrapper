@@ -1,6 +1,6 @@
 {
   "name": "bolt-iot-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "bolt iot api wrappers",
   "main": "dist/exports.js",
   "scripts": {
@@ -26,9 +26,9 @@
   "devDependencies": {
     "rimraf": "2.6.3",
     "rollup": "1.6.0",
-    "rollup-plugin-typescript": "1.0.0",
-    "rollup-plugin-node-resolve": "4.0.1",
     "rollup-plugin-commonjs": "9.2.1",
+    "rollup-plugin-node-resolve": "4.0.1",
+    "rollup-plugin-typescript": "1.0.0",
     "rollup-plugin-uglify": "6.0.2",
     "tslint": "5.14.0",
     "tslint-config-airbnb": "5.11.1",
