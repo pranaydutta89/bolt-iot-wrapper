@@ -4,8 +4,8 @@
   "description": "bolt iot api wrappers",
   "main": "dist/exports.js",
   "scripts": {
-    "build": "rimraf dist && tsc && npm run buildBrowser",
-    "buildBrowser": "rollup -c",
+    "build": "rimraf dist &&  tsc && npm run buildBrowser",
+    "buildBrowser": "rimraf umd && rollup -c",
     "prerelease": "npm run build",
     "release": "np"
   },
