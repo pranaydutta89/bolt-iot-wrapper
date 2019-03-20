@@ -14,10 +14,12 @@
     "url": "git+https://github.com/pranaydutta89/bolt-iot-wrapper.git"
   },
   "keywords": [
-    "bolt",
+    "bolt iot",
     "iot",
     "api",
-    "wrapper"
+    "wrapper",
+    "javascript",
+    "cloud"
   ],
   "author": "Pranay Dutta",
   "license": "ISC",
