@@ -4,7 +4,8 @@
   "description": "bolt iot api wrappers",
   "main": "dist/exports.js",
   "scripts": {
-    "test": "npm run build",
+    "test": "npm run build && npm run docs",
+    "docs": "rimraf docs && typedoc",
     "build": "rimraf dist && tsc && npm run buildBrowser",
     "buildBrowser": "rimraf umd && rollup -c",
     "release": "np"
@@ -37,7 +38,8 @@
     "rollup-plugin-uglify": "6.0.2",
     "tslint": "5.14.0",
     "tslint-config-airbnb": "5.11.1",
-    "typescript": "3.3.3333"
+    "typescript": "3.3.3333",
+    "typedoc": "0.14.2"
   },
   "dependencies": {
     "xhr": "2.5.0"
