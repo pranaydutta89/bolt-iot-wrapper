@@ -18,7 +18,7 @@ export default class Api extends Base {
     async getData(functi: string, query: string) {
 
         try {
-            const fullUrl = `${this.BaseUrl}/${this.ApiKey}/${functi}?deviceName=${this.DeviceName}&${query}`;
+            const fullUrl = `${CONSTANTS.baseUrl}/${this.ApiKey}/${functi}?deviceName=${this.DeviceName}&${query}`;
             const nowDate = Date.now();
             //below will give a gap of 3 seconds between api calls
             if (Api.lastApiCallTimeStamp && (nowDate - Api.lastApiCallTimeStamp) < CONSTANTS.defaultApiDiff) {

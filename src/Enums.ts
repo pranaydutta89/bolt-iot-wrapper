@@ -14,5 +14,6 @@ export enum STATE {
 
 export enum CONSTANTS {
     defaultLoopTime = 3100,
-    defaultApiDiff = 3000
+    defaultApiDiff = 3000,
+    baseUrl = 'https://cloud.boltiot.com/remote'
 }

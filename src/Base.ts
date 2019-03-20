@@ -4,8 +4,6 @@ export default abstract class Base {
     private static deviceName: string;
     private static apiKey: string;
     private static configDone: boolean = false;
-    private baseUrl = 'https://cloud.boltiot.com/remote';
-
 
     protected checkConfig() {
         if (!this.ConfigDone) {
@@ -13,9 +11,6 @@ export default abstract class Base {
         }
     }
 
-    protected get BaseUrl(): string {
-        return this.baseUrl;
-    }
 
     protected set DeviceName(val: string) {
         Base.deviceName = val;
