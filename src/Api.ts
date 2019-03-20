@@ -6,6 +6,8 @@ import { resolve } from 'url';
 
 
 export default class Api extends Base {
+
+    private static lastApiCallTimeStamp: number;
     constructor() {
         super();
         this.checkConfig();
@@ -16,6 +18,13 @@ export default class Api extends Base {
 
         try {
             const fullUrl = `${this.BaseUrl}/${this.ApiKey}/${functi}?deviceName=${this.DeviceName}&${query}`;
+            const nowDate = Date.now();
+            //below will give a gap of 3 seconds between api calls
+            if (Api.lastApiCallTimeStamp && (nowDate - Api.lastApiCallTimeStamp) <= 3000) {
+                await this.setTimeoutAsync(3000 - (nowDate - Api.lastApiCallTimeStamp));
+            }
+
+            Api.lastApiCallTimeStamp = nowDate;
             const data: IResponseData = await new Promise((resolve, reject) => {
                 xhr({
                     method: "GET",
