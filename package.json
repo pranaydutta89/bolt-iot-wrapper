@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/pranaydutta89/bolt-iot-wrapper#readme",
   "devDependencies": {
+    "@types/node-fetch": "1.6.9",
     "np": "*",
     "rimraf": "2.6.3",
     "rollup": "1.6.0",
@@ -42,7 +43,7 @@
     "typedoc": "0.14.2"
   },
   "dependencies": {
-    "xhr": "2.5.0"
+    "node-fetch": "2.3.0"
   },
   "files": [
     "umd",

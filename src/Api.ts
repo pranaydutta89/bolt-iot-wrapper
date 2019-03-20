@@ -1,7 +1,6 @@
-import xhr, { XhrResponse } from "xhr";
+import fetch from "node-fetch";
 import Base from "./Base";
 import { IResponseData } from "./Interfaces";
-import { resolve } from 'url';
 import { CONSTANTS } from './Enums';
 
 
@@ -26,34 +25,17 @@ export default class Api extends Base {
             }
 
             Api.lastApiCallTimeStamp = nowDate;
-            const data: IResponseData = await new Promise((resolve, reject) => {
-                xhr({
-                    method: "GET",
-                    uri: fullUrl,
-                    headers: {
-                        'Cache-Control': "no-cache"
-                    }
-                }, (err: Error, resp: XhrResponse, body: any) => {
+            const res = await fetch(fullUrl, {
+                headers: {
+                    'Cache-Control': "no-cache"
+                }
+            });
+            const data: IResponseData = await res.json();
+            if (data.success === '1') {
+                return data;
+            }
 
-                    if (err) {
-                        return reject(err);
-                    }
-
-                    if (resp.statusCode === 200) {
-                        if (body.success === '1') {
-                            return resolve(body);
-                        }
-                        else {
-                            return reject(body);
-                        }
-                    }
-                    else {
-                        return reject(resp);
-                    }
-                })
-            })
-
-            return data;
+            throw new Error('Cloud responsed with failure');
         }
         catch (e) {
             return Promise.reject(e.message)
