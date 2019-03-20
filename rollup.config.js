@@ -16,7 +16,7 @@ export default {
         uglify()
     ],
     output: {
-        name: 'main',
+        name: 'boltApi',
         file: './umd/boltIotWrapper.min.js',
         format: 'umd',
         strict: true
