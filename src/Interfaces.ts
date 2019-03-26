@@ -5,6 +5,11 @@ export interface IDigitalParam {
     state: STATE
 }
 
+export interface IDeviceDetails {
+    name: string,
+    key: string
+}
+
 
 export interface IDigitalReturn {
     pin: PINS,

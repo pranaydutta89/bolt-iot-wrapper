@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 import Base from "./Base";
-import { IResponseData } from "./Interfaces";
+import { IResponseData, IDeviceDetails } from "./Interfaces";
 import { CONSTANTS } from './Enums';
 
 
@@ -8,16 +8,21 @@ import { CONSTANTS } from './Enums';
 export default class Api extends Base {
 
     private static lastApiCallTimeStamp: number;
-    constructor() {
+    constructor(private currentDevice: IDeviceDetails) {
         super();
-        this.checkConfig();
     }
 
 
-    async getData(functi: string, query: string) {
+    async getData(functi: string, query?: string) {
 
         try {
-            const fullUrl = `${CONSTANTS.baseUrl}/${this.ApiKey}/${functi}?deviceName=${this.DeviceName}&${query}`;
+            let fullUrl;
+            if (query) {
+                fullUrl = `${CONSTANTS.baseUrl}/${this.currentDevice.key}/${functi}?deviceName=${this.currentDevice.name}&${query}`;
+            }
+            else {
+                fullUrl = `${CONSTANTS.baseUrl}/${this.currentDevice.key}/${functi}?deviceName=${this.currentDevice.name}`;
+            }
             const nowDate = Date.now();
             //below will give a gap of 3 seconds between api calls
             if (Api.lastApiCallTimeStamp && (nowDate - Api.lastApiCallTimeStamp) < CONSTANTS.defaultApiDiff) {

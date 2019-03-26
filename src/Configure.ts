@@ -1,4 +1,4 @@
-import Base from "./Base";
+import Base from "./ActionBase";
 
 class Configure extends Base {
 

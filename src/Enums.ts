@@ -17,3 +17,8 @@ export enum CONSTANTS {
     defaultApiDiff = 3000,
     baseUrl = 'https://cloud.boltiot.com/remote'
 }
+
+export enum STATUS {
+    online = 'online',
+    offline = 'offline'
+}

@@ -1,4 +1,4 @@
-import Base from "./Base";
+import Base from "./ActionBase";
 import { PINS, STATE, CONSTANTS } from "./Enums";
 import { IDigitalParam, IDigitalReturn } from "./Interfaces";
 import Api from "./Api";

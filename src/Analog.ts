@@ -1,4 +1,4 @@
-import Base from "./Base";
+import Base from "./ActionBase";
 import Api from "./Api";
 import { CONSTANTS } from './Enums';
 
@@ -6,9 +6,8 @@ export default class Analog extends Base {
 
     private api: Api = new Api();
 
-    constructor() {
-        super();
-        this.checkConfig();
+    constructor(deviceName: string) {
+        super(deviceName);
     }
 
     async loopRead(time: number, cb: (...args: any[]) => void) {
