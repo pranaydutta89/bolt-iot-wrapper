@@ -1,6 +1,6 @@
 {
   "name": "bolt-iot-wrapper",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "bolt iot api wrappers",
   "main": "dist/exports.js",
   "scripts": {
@@ -39,8 +39,8 @@
     "rollup-plugin-uglify": "6.0.2",
     "tslint": "5.14.0",
     "tslint-config-airbnb": "5.11.1",
-    "typescript": "3.3.3333",
-    "typedoc": "0.14.2"
+    "typedoc": "0.14.2",
+    "typescript": "3.3.3333"
   },
   "dependencies": {
     "node-fetch": "2.3.0"
