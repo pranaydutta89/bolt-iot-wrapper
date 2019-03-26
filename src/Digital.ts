@@ -6,10 +6,9 @@ import Api from "./Api";
 
 export default class Digital extends Base {
 
-    private api: Api = new Api();
-    constructor() {
-        super();
-        this.checkConfig();
+    private api: Api = new Api(this.CurrentDevice);
+    constructor(deviceName: string) {
+        super(deviceName);
     }
 
     async loopRead(pins: PINS | PINS[], time: number, cb: (...args: any[]) => void) {

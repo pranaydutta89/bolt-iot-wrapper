@@ -4,7 +4,7 @@ import { CONSTANTS } from './Enums';
 
 export default class Analog extends Base {
 
-    private api: Api = new Api();
+    private api: Api = new Api(this.CurrentDevice);
 
     constructor(deviceName: string) {
         super(deviceName);

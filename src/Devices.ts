@@ -1,5 +1,8 @@
-import Base from './ActionBase';
-import { Analog } from './exports';
+import Base from './Base';
+import Analog from './Analog';
+import Digital from './Digital';
+import Utility from './Utility';
+
 
 
 export default class Devices extends Base {
@@ -9,18 +12,26 @@ export default class Devices extends Base {
 
     read(deviceName: string) {
         return {
-            analog: new Analog()
+            Analog: new Analog(deviceName),
+            Digital: new Digital(deviceName),
+            Utility: new Utility(deviceName)
         }
     }
 
     add(deviceName: string, deviceKey: string) {
         if (deviceName && deviceKey && typeof deviceName === 'string' && typeof deviceKey === 'string') {
-            Base.devices.push({
-                name: deviceName,
-                key: deviceKey
-            })
+            const checkExisting = Base.devices.find(r => r.name === deviceName);
+            if (!checkExisting) {
+                Base.devices.push({
+                    name: deviceName,
+                    key: deviceKey
+                })
+            }
+            else {
+                throw new Error(`Device ${deviceName} already added`);
+            }
         }
 
-        throw new Error('Device details are invalid')
+        throw new Error('Device details are invalid');
     }
 }

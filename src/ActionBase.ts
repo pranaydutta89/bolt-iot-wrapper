@@ -4,9 +4,7 @@ import Base from './Base';
 
 export default abstract class ActionBase extends Base {
 
-    private static apiKey: string;
-    private static configDone: boolean = false;
-    protected static devices: Array<IDeviceDetails> = [];
+
 
     private currentDevice: IDeviceDetails | null = null;
 
