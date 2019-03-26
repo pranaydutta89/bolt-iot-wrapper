@@ -1,5 +1,7 @@
 {
   "files.eol": "\n",
   "editor.tabSize": 2,
-  "tslint.configFile": "./tslint.json"
+  "tslint.configFile": "./tslint.json",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true
 }

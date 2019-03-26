@@ -13,7 +13,10 @@ export default {
             include: 'node_modules/**'
         }),
         typescript({ target: "es5" }),
-        uglify()
+        uglify({
+            ie8: true,
+            warnings: true
+        })
     ],
     output: {
         name: 'boltApi',
