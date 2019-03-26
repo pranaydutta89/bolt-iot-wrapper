@@ -4,24 +4,24 @@ import { STATUS } from './Enums';
 
 export default class Utility extends ActionBase {
 
-    private api: Api = new Api(this.CurrentDevice);
+  private api: Api = new Api(this.CurrentDevice);
 
-    constructor(deviceName: string) {
-        super(deviceName);
-    }
+  constructor(deviceName: string) {
+    super(deviceName);
+  }
 
-    async isOnline() {
-        const res = await this.api.getData('isOnline');
-        return res.value === STATUS.online;
-    }
+  public async isOnline() {
+    const res = await this.api.getData('isOnline');
+    return res.value === STATUS.online;
+  }
 
-    async restart() {
-        const res = await this.api.getData('restart');
-        return res.value === 'Restarted';
-    }
+  public async restart() {
+    const res = await this.api.getData('restart');
+    return res.value === 'Restarted';
+  }
 
-    async version() {
-        const res = await this.api.getData('restart');
-        return res.value;
-    }
+  public async version() {
+    const res = await this.api.getData('restart');
+    return res.value;
+  }
 }
