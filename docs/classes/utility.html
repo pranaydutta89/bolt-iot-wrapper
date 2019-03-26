@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Api | bolt-iot-wrapper</title>
+	<title>Utility | bolt-iot-wrapper</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="api.html">Api</a>
+					<a href="utility.html">Utility</a>
 				</li>
 			</ul>
-			<h1>Class Api</h1>
+			<h1>Class Utility</h1>
 		</div>
 	</div>
 </header>
@@ -70,10 +70,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="base.html" class="tsd-signature-type">Base</a>
+						<a href="actionbase.html" class="tsd-signature-type">ActionBase</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">Api</span>
+								<span class="target">Utility</span>
 							</li>
 						</ul>
 					</li>
@@ -86,22 +86,29 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="api.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="utility.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="api.html#currentdevice" class="tsd-kind-icon">current<wbr>Device</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static"><a href="api.html#devices" class="tsd-kind-icon">devices</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="api.html#lastapicalltimestamp" class="tsd-kind-icon">last<wbr>Api<wbr>Call<wbr>Time<wbr>Stamp</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="utility.html#api" class="tsd-kind-icon">api</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static"><a href="utility.html#devices" class="tsd-kind-icon">devices</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="utility.html#currentdevice" class="tsd-kind-icon">Current<wbr>Device</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="api.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="api.html#settimeoutasync" class="tsd-kind-icon">set<wbr>Timeout<wbr>Async</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="utility.html#isonline" class="tsd-kind-icon">is<wbr>Online</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="utility.html#restart" class="tsd-kind-icon">restart</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="utility.html#settimeoutasync" class="tsd-kind-icon">set<wbr>Timeout<wbr>Async</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="utility.html#version" class="tsd-kind-icon">version</a></li>
 							</ul>
 						</section>
 					</div>
@@ -109,26 +116,27 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Api<span class="tsd-signature-symbol">(</span>currentDevice<span class="tsd-signature-symbol">: </span><a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="api.html" class="tsd-signature-type">Api</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Utility<span class="tsd-signature-symbol">(</span>deviceName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="utility.html" class="tsd-signature-type">Utility</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="actionbase.html">ActionBase</a>.<a href="actionbase.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/72e91de/src/Api.ts#L10">Api.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/72e91de/src/Utility.ts#L7">Utility.ts:7</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>currentDevice: <a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a></h5>
+									<h5>deviceName: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="api.html" class="tsd-signature-type">Api</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="utility.html" class="tsd-signature-type">Utility</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -136,12 +144,12 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="currentdevice" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> current<wbr>Device</h3>
-					<div class="tsd-signature tsd-kind-icon">current<wbr>Device<span class="tsd-signature-symbol">:</span> <a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a></div>
+					<a name="api" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> api</h3>
+					<div class="tsd-signature tsd-kind-icon">api<span class="tsd-signature-symbol">:</span> <a href="api.html" class="tsd-signature-type">Api</a><span class="tsd-signature-symbol"> =&nbsp;new Api(this.CurrentDevice)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/72e91de/src/Api.ts#L11">Api.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/72e91de/src/Utility.ts#L7">Utility.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -156,42 +164,77 @@
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a name="lastapicalltimestamp" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> last<wbr>Api<wbr>Call<wbr>Time<wbr>Stamp</h3>
-					<div class="tsd-signature tsd-kind-icon">last<wbr>Api<wbr>Call<wbr>Time<wbr>Stamp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/72e91de/src/Api.ts#L10">Api.ts:10</a></li>
-						</ul>
-					</aside>
-				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getdata" class="tsd-anchor"></a>
-					<h3>get<wbr>Data</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Data<span class="tsd-signature-symbol">(</span>functi<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, query<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iresponsedata.html" class="tsd-signature-type">IResponseData</a><span class="tsd-signature-symbol">&gt;</span></li>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="currentdevice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> Current<wbr>Device</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> CurrentDevice<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> CurrentDevice<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="actionbase.html">ActionBase</a>.<a href="actionbase.html#currentdevice-1">CurrentDevice</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/72e91de/src/Api.ts#L16">Api.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/72e91de/src/ActionBase.ts#L22">ActionBase.ts:22</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="actionbase.html">ActionBase</a>.<a href="actionbase.html#currentdevice-1">CurrentDevice</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/72e91de/src/ActionBase.ts#L18">ActionBase.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>functi: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> query: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<h5>val: <a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iresponsedata.html" class="tsd-signature-type">IResponseData</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isonline" class="tsd-anchor"></a>
+					<h3>is<wbr>Online</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Online<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/72e91de/src/Utility.ts#L13">Utility.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="restart" class="tsd-anchor"></a>
+					<h3>restart</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">restart<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/72e91de/src/Utility.ts#L18">Utility.ts:18</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -216,6 +259,23 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="version" class="tsd-anchor"></a>
+					<h3>version</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/72e91de/src/Utility.ts#L23">Utility.ts:23</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -249,33 +309,9 @@
 					<li class=" tsd-kind-class">
 						<a href="analog.html" class="tsd-kind-icon">Analog</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class=" tsd-kind-class">
 						<a href="api.html" class="tsd-kind-icon">Api</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="api.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="api.html#currentdevice" class="tsd-kind-icon">current<wbr>Device</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static">
-								<a href="api.html#devices" class="tsd-kind-icon">devices</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
-								<a href="api.html#lastapicalltimestamp" class="tsd-kind-icon">last<wbr>Api<wbr>Call<wbr>Time<wbr>Stamp</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="api.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="api.html#settimeoutasync" class="tsd-kind-icon">set<wbr>Timeout<wbr>Async</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="base.html" class="tsd-kind-icon">Base</a>
 					</li>
@@ -285,9 +321,39 @@
 					<li class=" tsd-kind-class">
 						<a href="digital.html" class="tsd-kind-icon">Digital</a>
 					</li>
-					<li class=" tsd-kind-class">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
 						<a href="utility.html" class="tsd-kind-icon">Utility</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="utility.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="utility.html#api" class="tsd-kind-icon">api</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static">
+								<a href="utility.html#devices" class="tsd-kind-icon">devices</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="utility.html#currentdevice" class="tsd-kind-icon">Current<wbr>Device</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="utility.html#isonline" class="tsd-kind-icon">is<wbr>Online</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="utility.html#restart" class="tsd-kind-icon">restart</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="utility.html#settimeoutasync" class="tsd-kind-icon">set<wbr>Timeout<wbr>Async</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="utility.html#version" class="tsd-kind-icon">version</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/idevicedetails.html" class="tsd-kind-icon">IDevice<wbr>Details</a>
 					</li>
