@@ -1,7 +1,7 @@
-import ActionBase from './ActionBase';
-import Api from './Api';
-import { CONSTANTS, PINS, STATE } from './Enums';
-import { IDigitalParam, IDigitalReturn } from './Interfaces';
+import Api from '../Api';
+import ActionBase from '../BaseClasses/ActionBase';
+import { CONSTANTS, PINS, STATE } from '../Enums';
+import { IDigitalParam, IDigitalReturn } from '../Interfaces';
 
 export default class Digital extends ActionBase {
 

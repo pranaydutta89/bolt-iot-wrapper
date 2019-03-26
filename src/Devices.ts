@@ -1,9 +1,9 @@
-import Analog from './Analog';
-import Base from './Base';
-import Digital from './Digital';
-import Utility from './Utility';
+import Analog from './Action/Analog';
+import Digital from './Action/Digital';
+import Utility from './Action/Utility';
+import Base from './BaseClasses/Base';
 
-export default class Devices extends Base {
+class Devices extends Base {
   constructor() {
     super();
   }
@@ -25,11 +25,13 @@ export default class Devices extends Base {
           key: deviceKey,
           name: deviceName,
         });
-      } else {
-        throw new Error(`Device ${deviceName} already added`);
+        return this.read(deviceName);
       }
+      throw new Error(`Device ${deviceName} already added`);
     }
 
     throw new Error('Device details are invalid');
   }
 }
+
+export default new Devices();

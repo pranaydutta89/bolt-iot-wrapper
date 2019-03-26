@@ -1,4 +1,4 @@
-import { IDeviceDetails } from './Interfaces';
+import { IDeviceDetails } from '../Interfaces';
 
 export default abstract class Base {
 
@@ -10,5 +10,9 @@ export default abstract class Base {
         // tslint:disable-next-line: align
       }, time);
     });
+  }
+
+  protected get IsNode() {
+    return typeof process !== 'undefined' && process.release && process.release.name === 'node';
   }
 }

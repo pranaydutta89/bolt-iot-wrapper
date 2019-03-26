@@ -1,6 +1,6 @@
-import ActionBase from './ActionBase';
-import Api from './Api';
-import { STATUS } from './Enums';
+import Api from '../Api';
+import ActionBase from '../BaseClasses/ActionBase';
+import { STATUS } from '../Enums';
 
 export default class Utility extends ActionBase {
 

@@ -1,13 +1,19 @@
 import nodeFetch from 'node-fetch';
-import Base from './Base';
+import Base from './BaseClasses/Base';
 import { CONSTANTS } from './Enums';
 import { IDeviceDetails, IResponseData } from './Interfaces';
 
 export default class Api extends Base {
 
   private static lastApiCallTimeStamp: number;
+  private fetch: any = null;
   constructor(private currentDevice: IDeviceDetails) {
     super();
+    if (this.IsNode) {
+      this.fetch = nodeFetch;
+    } else {
+      this.fetch = window.fetch;
+    }
   }
 
   public async getData(functi: string, query?: string) {
@@ -29,7 +35,7 @@ export default class Api extends Base {
       }
 
       Api.lastApiCallTimeStamp = nowDate;
-      const res = await nodeFetch(fullUrl, {
+      const res = await this.fetch(fullUrl, {
         headers: {
           'Cache-Control': 'no-cache',
         },

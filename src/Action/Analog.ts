@@ -1,6 +1,6 @@
-import ActionBase from './ActionBase';
-import Api from './Api';
-import { CONSTANTS } from './Enums';
+import Api from '../Api';
+import ActionBase from '../BaseClasses/ActionBase';
+import { CONSTANTS } from '../Enums';
 
 export default class Analog extends ActionBase {
 

@@ -1,5 +1,5 @@
+import { IDeviceDetails } from '../Interfaces';
 import Base from './Base';
-import { IDeviceDetails } from './Interfaces';
 
 export default abstract class ActionBase extends Base {
 
