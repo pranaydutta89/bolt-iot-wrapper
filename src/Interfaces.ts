@@ -16,6 +16,6 @@ export interface IDigitalReturn {
 }
 
 export interface IResponseData {
-  success: string;
+  success: number;
   value: any;
 }

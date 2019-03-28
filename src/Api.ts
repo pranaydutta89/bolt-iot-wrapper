@@ -35,13 +35,13 @@ export default class Api extends Base {
       }
 
       Api.lastApiCallTimeStamp = nowDate;
-      const res = await this.fetch(fullUrl, {
+      const res = await this.fetch(fullUrl.replace(/ /g, ''), {
         headers: {
           'Cache-Control': 'no-cache',
         },
       });
       const data: IResponseData = await res.json();
-      if (data.success === '1') {
+      if (data.success === 1) {
         return data;
       }
 
