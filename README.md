@@ -1,5 +1,5 @@
 # Bolt-IoT-Wrapper
-## Simple Bolt IoT Api wrapper
+## Simple Bolt IoT Api wrapper which also takes care of api call restrictions
 
 [![Build Status](https://travis-ci.org/pranaydutta89/bolt-iot-wrapper.svg?branch=master)](https://travis-ci.org/pranaydutta89/bolt-iot-wrapper)
 
