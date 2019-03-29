@@ -64,8 +64,58 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="bolt-iot-wrapper">bolt-iot-wrapper</h1>
+				<h1 id="bolt-iot-wrapper">Bolt-IoT-Wrapper</h1>
+				<h2 id="simple-bolt-iot-api-wrapper">Simple Bolt IoT Api wrapper</h2>
 				<p><a href="https://travis-ci.org/pranaydutta89/bolt-iot-wrapper"><img src="https://travis-ci.org/pranaydutta89/bolt-iot-wrapper.svg?branch=master" alt="Build Status"></a></p>
+				<h3 id="usage-">Usage:-</h3>
+				<h5 id="nodejs-">Nodejs:</h5>
+				<pre><code> npm i bolt-iot-<span class="hljs-keyword">wrapper</span></code></pre><pre><code class="language-javascript"> <span class="hljs-comment">// import module</span>
+ <span class="hljs-keyword">import</span> {Devices,Enums} <span class="hljs-keyword">from</span> <span class="hljs-string">'bolt-iot-wrapper'</span>;
+</code></pre>
+				<h5 id="browser">Browser</h5>
+				<pre><code class="language-html"><span class="hljs-comment">&lt;!-- CDN script tag--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/bolt-iot-wrapper/umd/boltIotWrapper.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<h5 id="api">API</h5>
+				<pre><code class="language-javascript">  <span class="hljs-comment">// 1) Register devices</span>
+  Devices.add({deviceName},{deviceKey});
+
+  <span class="hljs-comment">// 2) Read Device</span>
+  <span class="hljs-keyword">const</span> instance =Devices.read({deviceName},{deviceKey});
+
+  <span class="hljs-comment">// A) Analog</span>
+  instance.Analog.read()<span class="hljs-comment">// reads analog pin data return a promise</span>
+
+  instance.Analog.loopRead({milliseconds},{callback}) <span class="hljs-comment">// reads analog pin continously in paritcular interval</span>
+
+  <span class="hljs-comment">//B) Digital</span>
+  instance.Digital.read({pin |pins[]}) <span class="hljs-comment">// read Digital signals of single of multiple pins returns a promise</span>
+
+  instance.Digital.write({IDigitalparams | IDigitlparams[]}) <span class="hljs-comment">// write digital singals </span>
+
+  instance.Digital.loopRead({pin | pins[]},{milleseconds},{callback}) <span class="hljs-comment">// read digital singals in particular interval</span>
+
+  <span class="hljs-comment">//C) UART</span>
+  instance.UART.begin({baudRate}) <span class="hljs-comment">//sets the baud rate</span>
+
+  instance.UART.read({till})
+
+  instance.UART.write({data})
+
+  instance.UART.readWrite({data},{till})
+
+  <span class="hljs-comment">//D) utils</span>
+
+  instance.Utility.isOnline()<span class="hljs-comment">// returns a promise with resolved valueas true/false</span>
+
+  instance.Utility.restart()
+
+  instance.Utility.version()
+</code></pre>
+				<pre><code class="language-javascript"> <span class="hljs-comment">//same api follows for browser just it is inside window object as </span>
+
+ boltApi.Devices.add({deviceName},{deviceKey})</code></pre>
+				<h5 id="module-is-built-over-typescript-so-you-will-get-all-the-necessary-intellisense-for-detailed-information-visit-below-url">Module is built over typescript so you will get all the necessary intellisense ,for detailed information visit below url</h5>
+				<p><a href="https://pranaydutta89.github.io/bolt-iot-wrapper/">https://pranaydutta89.github.io/bolt-iot-wrapper/</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -107,6 +157,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/digital.html" class="tsd-kind-icon">Digital</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/uart.html" class="tsd-kind-icon">UART</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/utility.html" class="tsd-kind-icon">Utility</a>
