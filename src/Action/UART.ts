@@ -25,7 +25,7 @@ export default class UART extends ActionBase {
   }
 
   public async readWrite(data: string, till: number) {
-    const res = await this.api.getData('serialWR', `till=${till}&data={data}`);
+    const res = await this.api.getData('serialWR', `till=${till}&data=${data}`);
     return res.value;
   }
 }
