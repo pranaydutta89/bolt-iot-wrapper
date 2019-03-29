@@ -3,9 +3,9 @@
 
 [![Build Status](https://travis-ci.org/pranaydutta89/bolt-iot-wrapper.svg?branch=master)](https://travis-ci.org/pranaydutta89/bolt-iot-wrapper)
 
-###Usage:-
+### Usage:-
 
-#####Nodejs:
+##### Nodejs:
 
  ```
  npm i bolt-iot-wrapper
@@ -17,14 +17,14 @@
 
  ```
 
-#####Browser
+##### Browser
 
 ```html
 <!-- CDN script tag-->
 <script src="https://unpkg.com/bolt-iot-wrapper/umd/boltIotWrapper.min.js"></script>
 ```
 
-#####API
+##### API
 
 ```javascript
   // 1) Register devices
@@ -69,7 +69,7 @@
 
  boltApi.Devices.add({deviceName},{deviceKey})
 ```
-#####Module is built over typescript so you will get all the necessary intellisense ,for detailed information visit below url
+##### Module is built over typescript so you will get all the necessary intellisense ,for detailed information visit below url
 
 
 https://pranaydutta89.github.io/bolt-iot-wrapper/
