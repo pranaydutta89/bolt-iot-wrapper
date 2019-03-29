@@ -65,7 +65,7 @@
 ```
 
 ```javascript
- //same api follows for browser just its int window object as 
+ //same api follows for browser just it is inside window object as 
 
  boltApi.Devices.add({deviceName},{deviceKey})
 ```
