@@ -21,7 +21,7 @@ export default class Utility extends ActionBase {
   }
 
   public async version() {
-    const res = await this.api.getData('restart');
+    const res = await this.api.getData('version');
     return res.value;
   }
 }

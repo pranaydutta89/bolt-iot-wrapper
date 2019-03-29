@@ -1,5 +1,6 @@
 import Analog from './Action/Analog';
 import Digital from './Action/Digital';
+import UART from './Action/UART';
 import Utility from './Action/Utility';
 import Base from './BaseClasses/Base';
 
@@ -12,6 +13,7 @@ class Devices extends Base {
     return {
       Analog: new Analog(deviceName),
       Digital: new Digital(deviceName),
+      UART: new UART(deviceName),
       Utility: new Utility(deviceName),
     };
   }
