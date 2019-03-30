@@ -10,7 +10,7 @@ export default class Analog extends ActionBase {
     super(deviceName);
   }
 
-  public async loopRead(time: number, cb: (...args: any[]) => void) {
+  public async loopRead(time: number, cb: (...args: any[]) => boolean) {
     if (time < CONSTANTS.defaultLoopTime) {
       throw new Error(`Time cannot be less than ${CONSTANTS.defaultLoopTime} ms`);
     }
@@ -18,7 +18,9 @@ export default class Analog extends ActionBase {
     while (1) {
       const data = await Promise.all([this.read(), this.setTimeoutAsync(time)]);
       try {
-        cb(data[0]);
+        if (!cb(data[0])) {
+          break;
+        }
       } finally {
         // keep executing after cb
       }

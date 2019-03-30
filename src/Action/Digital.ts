@@ -10,14 +10,17 @@ export default class Digital extends ActionBase {
     super(deviceName);
   }
 
-  public async loopRead(pins: PINS | PINS[], time: number, cb: (...args: any[]) => void) {
+  public async loopRead(
+    pins: PINS | PINS[], time: number, cb: (args: IDigitalReturn | IDigitalReturn[]) => boolean) {
     if (time < CONSTANTS.defaultLoopTime) {
       throw new Error(`Time cannot be less than ${CONSTANTS.defaultLoopTime} ms`);
     } else {
       while (1) {
         const data = await Promise.all([this.read(pins), this.setTimeoutAsync(time)]);
         try {
-          cb(data[0]);
+          if (!cb(data[0])) {
+            break;
+          }
         } finally {
           // run after cb
         }

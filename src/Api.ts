@@ -41,7 +41,7 @@ export default class Api extends Base {
         },
       });
       const data: IResponseData = await res.json();
-      if (data.success === 1) {
+      if (data.success.toString() === '1') {
         return data;
       }
 
