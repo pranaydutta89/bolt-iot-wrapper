@@ -6,5 +6,6 @@ import Digital from './Action/Digital';
 import Utility from './Action/Utility';
 import Devices from './Devices';
 import * as Enums from './Enums';
+import PubSub from './PubSub';
 
-export { Devices, Enums, Analog, Digital, Utility };
+export { Devices, Enums, Analog, Digital, Utility, PubSub };

@@ -2,7 +2,7 @@ import Base from './BaseClasses/Base';
 import { API_PHASE, EVENT } from './Enums';
 import EventListeners from './EventListeners';
 
-export class PubSub extends Base {
+class PubSub extends Base {
 
   private eventListener = new EventListeners();
 
@@ -10,3 +10,5 @@ export class PubSub extends Base {
     return this.eventListener.subscribe(EVENT.api, cb);
   }
 }
+
+export default new PubSub();
