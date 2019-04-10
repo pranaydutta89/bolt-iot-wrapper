@@ -21,3 +21,13 @@ export enum STATUS {
   online = 'online',
   offline = 'offline',
 }
+
+export enum EVENT {
+  api,
+}
+
+export enum API_PHASE {
+  start,
+  inProgress,
+  completed,
+}

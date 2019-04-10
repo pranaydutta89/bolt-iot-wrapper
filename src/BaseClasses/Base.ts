@@ -1,8 +1,10 @@
 import { IDeviceDetails } from '../Interfaces';
+import { IEventListeners } from './../Interfaces';
 
 export default abstract class Base {
 
-  protected static devices: IDeviceDetails[] = [];
+  private static devices: IDeviceDetails[] = [];
+  private static eventListeners: IEventListeners[] = [];
   protected setTimeoutAsync(time: number) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -10,6 +12,13 @@ export default abstract class Base {
         // tslint:disable-next-line: align
       }, time);
     });
+  }
+
+  protected get EventListeners() {
+    return Base.eventListeners;
+  }
+  protected get Devices() {
+    return Base.devices;
   }
 
   protected get IsNode() {

@@ -1,12 +1,14 @@
 import nodeFetch from 'node-fetch';
 import Base from './BaseClasses/Base';
-import { CONSTANTS } from './Enums';
+import { API_PHASE, CONSTANTS, EVENT } from './Enums';
+import EventListeners from './EventListeners';
 import { IDeviceDetails, IResponseData } from './Interfaces';
 
 export default class Api extends Base {
 
   private static lastApiCallTimeStamp: number;
   private fetch: any = null;
+  private eventListeners = new EventListeners();
   constructor(private currentDevice: IDeviceDetails) {
     super();
     if (this.IsNode) {
@@ -20,6 +22,7 @@ export default class Api extends Base {
 
     try {
       let fullUrl;
+      this.eventListeners.run(EVENT.api, API_PHASE.start);
       if (query) {
         fullUrl = `${CONSTANTS.baseUrl}/${this.currentDevice.key}/${functi}?
         deviceName=${this.currentDevice.name}&${query}`;
@@ -35,6 +38,7 @@ export default class Api extends Base {
       }
 
       Api.lastApiCallTimeStamp = nowDate;
+      this.eventListeners.run(EVENT.api, API_PHASE.inProgress);
       const res = await this.fetch(fullUrl.replace(/ /g, ''), {
         headers: {
           'Cache-Control': 'no-cache',
@@ -45,9 +49,11 @@ export default class Api extends Base {
         return data;
       }
 
-      throw new Error('Cloud responsed with failure');
+      throw new Error('Cloud responded with failure');
     } catch (e) {
       return Promise.reject(e.message);
+    } finally {
+      this.eventListeners.run(EVENT.api, API_PHASE.completed);
     }
 
   }

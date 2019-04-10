@@ -1,4 +1,4 @@
-import { PINS, STATE } from './Enums';
+import { EVENT, PINS, STATE } from './Enums';
 
 export interface IDigitalParam {
   pin: PINS;
@@ -13,6 +13,11 @@ export interface IDeviceDetails {
 export interface IDigitalReturn {
   pin: PINS;
   state: STATE;
+}
+
+export interface IEventListeners {
+  event: EVENT;
+  cb: [(...args: any[]) => void];
 }
 
 export interface IResponseData {
