@@ -37,3 +37,18 @@ export enum API_PHASE {
   inProgress,
   completed,
 }
+
+export enum BOLT_FUNC {
+  digitalMultiRead = 'digitalMultiRead',
+  digitalRead = 'digitalRead',
+  digitalMultiWrtie = 'digitalMultiWrite',
+  digitalWrite = 'digitalWrite',
+  analogRead = 'analogRead',
+  serialBegin = 'serialBegin',
+  serialWrite = 'serialWrite',
+  serialRead = 'serialRead',
+  serialWR = 'serialWR',
+  isOnline = 'isOnline',
+  restart = 'restart',
+  version = 'version',
+}

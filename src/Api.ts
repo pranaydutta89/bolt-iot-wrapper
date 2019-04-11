@@ -1,6 +1,6 @@
 import nodeFetch from 'node-fetch';
 import Base from './BaseClasses/Base';
-import { API_PHASE, CONSTANTS, EVENT, LOG_TYPE } from './Enums';
+import { API_PHASE, BOLT_FUNC, CONSTANTS, EVENT, LOG_TYPE } from './Enums';
 import EventListeners from './EventListeners';
 import { IDeviceDetails, IResponseData } from './Interfaces';
 
@@ -18,11 +18,11 @@ export default class Api extends Base {
     }
   }
 
-  public async getData(functi: string, query?: string) {
+  public async getData(functi: BOLT_FUNC, query?: string) {
 
     try {
       let fullUrl;
-      this.eventListeners.run(EVENT.api, API_PHASE.start);
+      this.eventListeners.run(EVENT.api, API_PHASE.start, functi);
       if (query) {
         fullUrl = `${CONSTANTS.baseUrl}/${this.currentDevice.key}/${functi}?
         deviceName=${this.currentDevice.name}&${query}`;
@@ -38,7 +38,7 @@ export default class Api extends Base {
       }
 
       Api.lastApiCallTimeStamp = nowDate;
-      this.eventListeners.run(EVENT.api, API_PHASE.inProgress);
+      this.eventListeners.run(EVENT.api, API_PHASE.inProgress, functi);
       const res = await this.fetch(fullUrl.replace(/ /g, ''), {
         headers: {
           'Cache-Control': 'no-cache',
@@ -55,7 +55,7 @@ export default class Api extends Base {
     } catch (e) {
       return Promise.reject(e.message);
     } finally {
-      this.eventListeners.run(EVENT.api, API_PHASE.completed);
+      this.eventListeners.run(EVENT.api, API_PHASE.completed, functi);
     }
 
   }

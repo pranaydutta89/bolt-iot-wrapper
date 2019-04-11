@@ -1,6 +1,6 @@
 import Api from '../Api';
 import ActionBase from '../BaseClasses/ActionBase';
-import { CONSTANTS, EVENT, LOG_TYPE, PINS, STATE } from '../Enums';
+import { BOLT_FUNC, CONSTANTS, EVENT, LOG_TYPE, PINS, STATE } from '../Enums';
 import { IDigitalParam, IDigitalReturn } from '../Interfaces';
 
 export default class Digital extends ActionBase {
@@ -36,7 +36,7 @@ export default class Digital extends ActionBase {
     let data;
     if (pins instanceof Array) {
       pinsData = pins.join(',');
-      data = await this.api.getData('digitalMultiRead', `pins=${pinsData}`);
+      data = await this.api.getData(BOLT_FUNC.digitalMultiRead, `pins=${pinsData}`);
       const pinsResponses = data.value.split(',');
       const returnData: IDigitalReturn[] = [];
       pinsResponses.forEach((element: string, idx: number) => {
@@ -49,7 +49,7 @@ export default class Digital extends ActionBase {
     }
     {
       pinsData = pins.toString();
-      data = await this.api.getData('digitalRead', `pin=${pinsData}`);
+      data = await this.api.getData(BOLT_FUNC.digitalRead, `pin=${pinsData}`);
       const returnData: IDigitalReturn = {
         pin: pins,
         state: data.value === '1' ? STATE.high : STATE.low,
@@ -69,10 +69,11 @@ export default class Digital extends ActionBase {
       });
 
       return await
-        this.api.getData('digitalMultiWrite', `pins=${pins.join(',')}&states=${state.join(',')}`);
+        this.api.
+          getData(BOLT_FUNC.digitalMultiWrtie, `pins=${pins.join(',')}&states=${state.join(',')}`);
     }
 
-    return await this.api.getData('digitalWrite', `pin=${input.pin}&state=${input.state}`);
+    return await this.api.getData(BOLT_FUNC.digitalWrite, `pin=${input.pin}&state=${input.state}`);
 
   }
 

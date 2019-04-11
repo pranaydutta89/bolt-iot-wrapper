@@ -1,7 +1,6 @@
 import Api from '../Api';
 import ActionBase from '../BaseClasses/ActionBase';
-import { CONSTANTS, EVENT, LOG_TYPE } from '../Enums';
-import EventListeners from '../EventListeners';
+import { BOLT_FUNC, CONSTANTS, EVENT, LOG_TYPE } from '../Enums';
 
 export default class Analog extends ActionBase {
 
@@ -31,7 +30,7 @@ export default class Analog extends ActionBase {
 
   }
   public async read(): Promise<number> {
-    const data = await this.api.getData('analogRead', 'pin=A0');
+    const data = await this.api.getData(BOLT_FUNC.analogRead, 'pin=A0');
     return parseInt(data.value, 10);
   }
 }
