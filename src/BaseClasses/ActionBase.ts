@@ -7,7 +7,7 @@ export default abstract class ActionBase extends Base {
 
   constructor(deviceName: string) {
     super();
-    const tempDeivce = ActionBase.devices.find(r => r.name === deviceName);
+    const tempDeivce = this.Devices.find(r => r.name === deviceName);
     if (deviceName && tempDeivce) {
       this.currentDevice = tempDeivce;
     }

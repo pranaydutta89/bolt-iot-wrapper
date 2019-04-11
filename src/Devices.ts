@@ -21,9 +21,9 @@ class Devices extends Base {
   public add(deviceName: string, deviceKey: string) {
     if (deviceName && deviceKey &&
       typeof deviceName === 'string' && typeof deviceKey === 'string') {
-      const checkExisting = Base.devices.find(r => r.name === deviceName);
+      const checkExisting = this.Devices.find(r => r.name === deviceName);
       if (!checkExisting) {
-        Base.devices.push({
+        this.Devices.push({
           key: deviceKey,
           name: deviceName,
         });
