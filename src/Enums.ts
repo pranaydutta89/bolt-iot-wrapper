@@ -24,6 +24,12 @@ export enum STATUS {
 
 export enum EVENT {
   api,
+  message,
+}
+export enum LOG_TYPE {
+  info,
+  warn,
+  error,
 }
 
 export enum API_PHASE {

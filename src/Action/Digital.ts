@@ -1,6 +1,6 @@
 import Api from '../Api';
 import ActionBase from '../BaseClasses/ActionBase';
-import { CONSTANTS, PINS, STATE } from '../Enums';
+import { CONSTANTS, EVENT, LOG_TYPE, PINS, STATE } from '../Enums';
 import { IDigitalParam, IDigitalReturn } from '../Interfaces';
 
 export default class Digital extends ActionBase {
@@ -13,7 +13,9 @@ export default class Digital extends ActionBase {
   public async loopRead(
     pins: PINS | PINS[], time: number, cb: (args: IDigitalReturn | IDigitalReturn[]) => boolean) {
     if (time < CONSTANTS.defaultLoopTime) {
-      throw new Error(`Time cannot be less than ${CONSTANTS.defaultLoopTime} ms`);
+      const msg = `Time cannot be less than ${CONSTANTS.defaultLoopTime} ms`;
+      this.eventListeners.run(EVENT.message, LOG_TYPE.error, msg);
+      this.log(LOG_TYPE.error, msg);
     } else {
       while (1) {
         const data = await Promise.all([this.read(pins), this.setTimeoutAsync(time)]);

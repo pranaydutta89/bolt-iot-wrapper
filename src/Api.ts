@@ -1,6 +1,6 @@
 import nodeFetch from 'node-fetch';
 import Base from './BaseClasses/Base';
-import { API_PHASE, CONSTANTS, EVENT } from './Enums';
+import { API_PHASE, CONSTANTS, EVENT, LOG_TYPE } from './Enums';
 import EventListeners from './EventListeners';
 import { IDeviceDetails, IResponseData } from './Interfaces';
 
@@ -48,8 +48,10 @@ export default class Api extends Base {
       if (data.success.toString() === '1') {
         return data;
       }
-
-      throw new Error('Cloud responded with failure');
+      const msg = `Bolt cloud responded with failure: ${data.value}`;
+      this.eventListeners.run(EVENT.message, LOG_TYPE.error, msg);
+      this.log(LOG_TYPE.error, msg);
+      return Promise.reject();
     } catch (e) {
       return Promise.reject(e.message);
     } finally {
