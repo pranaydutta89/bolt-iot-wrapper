@@ -52,3 +52,8 @@ export enum BOLT_FUNC {
   restart = 'restart',
   version = 'version',
 }
+
+export enum API_STATUS {
+  fail = 'fail',
+  success = 'success',
+}

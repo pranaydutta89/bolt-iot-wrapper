@@ -1,6 +1,6 @@
 import Api from '../Api';
 import ActionBase from '../BaseClasses/ActionBase';
-import { BOLT_FUNC, CONSTANTS, EVENT, LOG_TYPE } from '../Enums';
+import { API_STATUS, BOLT_FUNC, CONSTANTS, EVENT, LOG_TYPE } from '../Enums';
 
 export default class Analog extends ActionBase {
 
@@ -18,13 +18,19 @@ export default class Analog extends ActionBase {
     }
 
     while (1) {
-      const data = await Promise.all([this.read(), this.setTimeoutAsync(time)]);
       try {
-        if (!cb(data[0])) {
+        await this.setTimeoutAsync(time);
+        const data = await this.read();
+        if (!cb(API_STATUS.success, data)) {
+          break;
+        }
+      } catch (e) {
+        // catch the excception the continue the loop
+        if (!cb(API_STATUS.fail, {})) {
           break;
         }
       } finally {
-        // keep executing after cb
+        // run after cb
       }
     }
 
