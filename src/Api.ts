@@ -19,7 +19,7 @@ export default class Api extends Base {
   }
 
   public async getData(functi: BOLT_FUNC, query?: string) {
-
+    let msg;
     try {
       let fullUrl;
       this.eventListeners.run(EVENT.api, API_PHASE.start, functi);
@@ -34,7 +34,10 @@ export default class Api extends Base {
       // below will give a gap of 3 seconds between api calls
       if (Api.lastApiCallTimeStamp &&
         (nowDate - Api.lastApiCallTimeStamp) < CONSTANTS.defaultApiDiff) {
-        await this.setTimeoutAsync(CONSTANTS.defaultApiDiff - (nowDate - Api.lastApiCallTimeStamp));
+        msg = `Frequent API call diff should be:${CONSTANTS.defaultApiDiff}`;
+        this.eventListeners.run(EVENT.message, LOG_TYPE.error, msg);
+        this.log(LOG_TYPE.error, msg);
+        return Promise.reject(msg);
       }
 
       Api.lastApiCallTimeStamp = nowDate;
@@ -48,7 +51,7 @@ export default class Api extends Base {
       if (data.success.toString() === '1') {
         return data;
       }
-      const msg = `Bolt cloud responded with failure: ${data.value}`;
+      msg = `Bolt cloud responded with failure: ${data.value}`;
       this.eventListeners.run(EVENT.message, LOG_TYPE.error, msg);
       this.log(LOG_TYPE.error, msg);
       return Promise.reject();
