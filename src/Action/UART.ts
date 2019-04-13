@@ -4,9 +4,9 @@ import { BOLT_FUNC } from '../Enums';
 
 export default class UART extends ActionBase {
 
-  private api: Api = new Api(this.CurrentDevice);
+  private api: Api = new Api(this.CurrentDevice, this.showLoader);
 
-  constructor(deviceName: string) {
+  constructor(deviceName: string, private showLoader?: boolean) {
     super(deviceName);
   }
 

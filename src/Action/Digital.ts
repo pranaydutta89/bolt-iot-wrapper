@@ -5,8 +5,8 @@ import { IDigitalParam, IDigitalReturn } from '../Interfaces';
 
 export default class Digital extends ActionBase {
 
-  private api: Api = new Api(this.CurrentDevice);
-  constructor(deviceName: string) {
+  private api: Api = new Api(this.CurrentDevice, this.showLoader);
+  constructor(deviceName: string, private showLoader?: boolean) {
     super(deviceName);
   }
 

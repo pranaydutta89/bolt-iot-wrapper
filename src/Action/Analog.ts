@@ -4,8 +4,8 @@ import { API_STATUS, BOLT_FUNC, CONSTANTS, EVENT, LOG_TYPE } from '../Enums';
 
 export default class Analog extends ActionBase {
 
-  private api: Api = new Api(this.CurrentDevice);
-  constructor(deviceName: string) {
+  private api: Api = new Api(this.CurrentDevice, this.showLoader);
+  constructor(deviceName: string, private showLoader?: boolean) {
     super(deviceName);
   }
 

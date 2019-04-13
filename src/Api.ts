@@ -9,7 +9,7 @@ export default class Api extends Base {
   private static lastApiCallTimeStamp: number;
   private fetch: any = null;
   private eventListeners = new EventListeners();
-  constructor(private currentDevice: IDeviceDetails) {
+  constructor(private currentDevice: IDeviceDetails, private showLoader = true) {
     super();
     if (this.IsNode) {
       this.fetch = nodeFetch;
@@ -22,7 +22,9 @@ export default class Api extends Base {
     let msg;
     try {
       let fullUrl;
-      this.eventListeners.run(EVENT.api, API_PHASE.start, functi);
+      if (this.showLoader) {
+        this.eventListeners.run(EVENT.api, API_PHASE.start, functi);
+      }
       if (query) {
         fullUrl = `${CONSTANTS.baseUrl}/${this.currentDevice.key}/${functi}?
         deviceName=${this.currentDevice.name}&${query}`;
@@ -41,7 +43,9 @@ export default class Api extends Base {
       }
 
       Api.lastApiCallTimeStamp = nowDate;
-      this.eventListeners.run(EVENT.api, API_PHASE.inProgress, functi);
+      if (this.showLoader) {
+        this.eventListeners.run(EVENT.api, API_PHASE.inProgress, functi);
+      }
       const res = await this.fetch(fullUrl.replace(/ /g, ''), {
         headers: {
           'Cache-Control': 'no-cache',
@@ -58,7 +62,9 @@ export default class Api extends Base {
     } catch (e) {
       return Promise.reject(e.message);
     } finally {
-      this.eventListeners.run(EVENT.api, API_PHASE.completed, functi);
+      if (this.showLoader) {
+        this.eventListeners.run(EVENT.api, API_PHASE.completed, functi);
+      }
     }
 
   }

@@ -4,9 +4,9 @@ import { BOLT_FUNC, STATUS } from '../Enums';
 
 export default class Utility extends ActionBase {
 
-  private api: Api = new Api(this.CurrentDevice);
+  private api: Api = new Api(this.CurrentDevice, this.showLoader);
 
-  constructor(deviceName: string) {
+  constructor(deviceName: string, private showLoader?: boolean) {
     super(deviceName);
   }
 

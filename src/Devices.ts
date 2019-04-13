@@ -12,14 +12,14 @@ class Devices extends Base {
     super();
   }
 
-  public read(deviceName: string) {
+  public read(deviceName: string, showLoader?: boolean) {
 
     if (this.isDeviceAdded(deviceName)) {
       return {
-        Analog: new Analog(deviceName),
-        Digital: new Digital(deviceName),
-        UART: new UART(deviceName),
-        Utility: new Utility(deviceName),
+        Analog: new Analog(deviceName, showLoader),
+        Digital: new Digital(deviceName, showLoader),
+        UART: new UART(deviceName, showLoader),
+        Utility: new Utility(deviceName, showLoader),
       };
     }
     const mesg = 'Device details are invalid';
