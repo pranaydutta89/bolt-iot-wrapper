@@ -60,6 +60,8 @@ export default class Api extends Base {
       this.log(LOG_TYPE.error, msg);
       return Promise.reject();
     } catch (e) {
+      this.eventListeners.run(EVENT.message, LOG_TYPE.error, e.message);
+      this.log(LOG_TYPE.error, e.message);
       return Promise.reject(e.message);
     } finally {
       if (this.showLoader) {
