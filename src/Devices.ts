@@ -56,4 +56,5 @@ class Devices extends Base {
   }
 }
 
-export default new Devices();
+const instance = new Devices();
+export { instance, Devices };

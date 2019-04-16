@@ -7,7 +7,7 @@ yarn-error.log*
 umd
 dist
 .cache
-
+coverage
 # Runtime data
 pids
 *.pid
