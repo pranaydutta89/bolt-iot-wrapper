@@ -22,6 +22,7 @@ describe('test analog apis', () => {
       };
     });
     const data = await analog.read();
+    expect(analog.api.getData).toBeCalledTimes(1);
     expect(data).toBeDefined();
     expect(data).toBe(10);
   });
@@ -38,6 +39,7 @@ describe('test analog apis', () => {
       return (cbCount += 1) < 5;
     };
     await analog.loopRead(4000, cb);
+    expect(analog.api.getData).toBeCalledTimes(5);
     expect(cbCount).toBe(5);
   });
 

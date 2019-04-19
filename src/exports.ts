@@ -6,5 +6,6 @@ import Utility from './Action/Utility';
 import { instance as Devices } from './Devices';
 import * as Enums from './Enums';
 import PubSub from './PubSub';
+import UART from './Action/UART';
 
-export { Devices, Enums, Analog, Digital, Utility, PubSub };
+export { Devices, Enums, Analog, Digital, Utility, PubSub, UART };
