@@ -70,7 +70,7 @@
 				<h3 id="usage-">Usage:-</h3>
 				<h5 id="nodejs-">Nodejs:</h5>
 				<pre><code> npm i bolt-iot-<span class="hljs-keyword">wrapper</span></code></pre><pre><code class="language-javascript"> <span class="hljs-comment">// import module</span>
- <span class="hljs-keyword">import</span> {Devices,Enums} <span class="hljs-keyword">from</span> <span class="hljs-string">'bolt-iot-wrapper'</span>;
+ <span class="hljs-keyword">import</span> {Devices,Enums,PubSub} <span class="hljs-keyword">from</span> <span class="hljs-string">'bolt-iot-wrapper'</span>;
 </code></pre>
 				<h5 id="browser">Browser</h5>
 				<pre><code class="language-html"><span class="hljs-comment">&lt;!-- CDN script tag--&gt;</span>
@@ -110,6 +110,12 @@
   instance.Utility.restart()
 
   instance.Utility.version()
+
+  <span class="hljs-comment">//E) Api Callback </span>
+
+  PubSub.api({cb}) <span class="hljs-comment">// the callback will get fired with phases of api calls</span>
+
+  PubSub.message({cb}) <span class="hljs-comment">// the callback will get fired when libary would send some message to client</span>
 </code></pre>
 				<pre><code class="language-javascript"> <span class="hljs-comment">//same api follows for browser just it is inside window object as </span>
 
@@ -129,7 +135,22 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
+						<a href="enums/api_phase.html" class="tsd-kind-icon">API_<wbr>PHASE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/api_status.html" class="tsd-kind-icon">API_<wbr>STATUS</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/bolt_func.html" class="tsd-kind-icon">BOLT_<wbr>FUNC</a>
+					</li>
+					<li class=" tsd-kind-enum">
 						<a href="enums/constants.html" class="tsd-kind-icon">CONSTANTS</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/event.html" class="tsd-kind-icon">EVENT</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/log_type.html" class="tsd-kind-icon">LOG_<wbr>TYPE</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/pins.html" class="tsd-kind-icon">PINS</a>
@@ -152,11 +173,17 @@
 					<li class=" tsd-kind-class">
 						<a href="classes/base.html" class="tsd-kind-icon">Base</a>
 					</li>
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-is-not-exported">
 						<a href="classes/devices.html" class="tsd-kind-icon">Devices</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/digital.html" class="tsd-kind-icon">Digital</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/eventlisteners.html" class="tsd-kind-icon">Event<wbr>Listeners</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/pubsub.html" class="tsd-kind-icon">Pub<wbr>Sub</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/uart.html" class="tsd-kind-icon">UART</a>
@@ -174,7 +201,13 @@
 						<a href="interfaces/idigitalreturn.html" class="tsd-kind-icon">IDigital<wbr>Return</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/ieventlisteners.html" class="tsd-kind-icon">IEvent<wbr>Listeners</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/iresponsedata.html" class="tsd-kind-icon">IResponse<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#instance" class="tsd-kind-icon">instance</a>
 					</li>
 				</ul>
 			</nav>

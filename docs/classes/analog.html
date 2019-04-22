@@ -89,23 +89,27 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="analog.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private-protected">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="analog.html#api" class="tsd-kind-icon">api</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static"><a href="analog.html#devices" class="tsd-kind-icon">devices</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="analog.html#eventlisteners" class="tsd-kind-icon">event<wbr>Listeners</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="analog.html#showloader" class="tsd-kind-icon">show<wbr>Loader</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="analog.html#currentdevice" class="tsd-kind-icon">Current<wbr>Device</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="analog.html#devices" class="tsd-kind-icon">Devices</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="analog.html#eventlisteners-1" class="tsd-kind-icon">Event<wbr>Listeners</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="analog.html#isnode" class="tsd-kind-icon">Is<wbr>Node</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="analog.html#log" class="tsd-kind-icon">log</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="analog.html#loopread" class="tsd-kind-icon">loop<wbr>Read</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="analog.html#read" class="tsd-kind-icon">read</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="analog.html#settimeoutasync" class="tsd-kind-icon">set<wbr>Timeout<wbr>Async</a></li>
@@ -120,14 +124,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Analog<span class="tsd-signature-symbol">(</span>deviceName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="analog.html" class="tsd-signature-type">Analog</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Analog<span class="tsd-signature-symbol">(</span>deviceName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, showLoader<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="analog.html" class="tsd-signature-type">Analog</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="actionbase.html">ActionBase</a>.<a href="actionbase.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/082c7ef/src/Action/Analog.ts#L7">Action/Analog.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/Action/Analog.ts#L7">Action/Analog.ts:7</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -135,32 +139,45 @@
 								<li>
 									<h5>deviceName: <span class="tsd-signature-type">string</span></h5>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> showLoader: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="analog.html" class="tsd-signature-type">Analog</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="api" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> api</h3>
-					<div class="tsd-signature tsd-kind-icon">api<span class="tsd-signature-symbol">:</span> <a href="api.html" class="tsd-signature-type">Api</a><span class="tsd-signature-symbol"> =&nbsp;new Api(this.CurrentDevice)</span></div>
+					<div class="tsd-signature tsd-kind-icon">api<span class="tsd-signature-symbol">:</span> <a href="api.html" class="tsd-signature-type">Api</a><span class="tsd-signature-symbol"> =&nbsp;new Api(this.CurrentDevice, this.showLoader)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/082c7ef/src/Action/Analog.ts#L7">Action/Analog.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/Action/Analog.ts#L7">Action/Analog.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static">
-					<a name="devices" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> devices</h3>
-					<div class="tsd-signature tsd-kind-icon">devices<span class="tsd-signature-symbol">:</span> <a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="eventlisteners" class="tsd-anchor"></a>
+					<h3>event<wbr>Listeners</h3>
+					<div class="tsd-signature tsd-kind-icon">event<wbr>Listeners<span class="tsd-signature-symbol">:</span> <a href="eventlisteners.html" class="tsd-signature-type">EventListeners</a><span class="tsd-signature-symbol"> =&nbsp;new EventListeners()</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#devices">devices</a></p>
+						<p>Inherited from <a href="actionbase.html">ActionBase</a>.<a href="actionbase.html#eventlisteners">eventListeners</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/082c7ef/src/BaseClasses/Base.ts#L5">BaseClasses/Base.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/BaseClasses/ActionBase.ts#L7">BaseClasses/ActionBase.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="showloader" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> show<wbr>Loader</h3>
+					<div class="tsd-signature tsd-kind-icon">show<wbr>Loader<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/Action/Analog.ts#L8">Action/Analog.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -179,7 +196,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="actionbase.html">ActionBase</a>.<a href="actionbase.html#currentdevice-1">CurrentDevice</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/082c7ef/src/BaseClasses/ActionBase.ts#L20">BaseClasses/ActionBase.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/BaseClasses/ActionBase.ts#L22">BaseClasses/ActionBase.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a></h4>
@@ -188,7 +205,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="actionbase.html">ActionBase</a>.<a href="actionbase.html#currentdevice-1">CurrentDevice</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/082c7ef/src/BaseClasses/ActionBase.ts#L16">BaseClasses/ActionBase.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/BaseClasses/ActionBase.ts#L18">BaseClasses/ActionBase.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -198,6 +215,42 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="devices" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> Devices</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> Devices<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#devices-1">Devices</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/BaseClasses/Base.ts#L21">BaseClasses/Base.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="eventlisteners-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> Event<wbr>Listeners</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> EventListeners<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/ieventlisteners.html" class="tsd-signature-type">IEventListeners</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#eventlisteners-1">EventListeners</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/BaseClasses/Base.ts#L18">BaseClasses/Base.ts:18</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/ieventlisteners.html" class="tsd-signature-type">IEventListeners</a><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -212,7 +265,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#isnode">IsNode</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/082c7ef/src/BaseClasses/Base.ts#L15">BaseClasses/Base.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/BaseClasses/Base.ts#L25">BaseClasses/Base.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -222,6 +275,33 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="log" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> log</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/log_type.html" class="tsd-signature-type">LOG_TYPE</a>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#log">log</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/BaseClasses/Base.ts#L30">BaseClasses/Base.ts:30</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <a href="../enums/log_type.html" class="tsd-signature-type">LOG_TYPE</a></h5>
+								</li>
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="loopread" class="tsd-anchor"></a>
 					<h3>loop<wbr>Read</h3>
@@ -232,7 +312,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/082c7ef/src/Action/Analog.ts#L13">Action/Analog.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/Action/Analog.ts#L12">Action/Analog.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -276,7 +356,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/082c7ef/src/Action/Analog.ts#L30">Action/Analog.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/Action/Analog.ts#L38">Action/Analog.ts:38</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -294,7 +374,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#settimeoutasync">setTimeoutAsync</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/082c7ef/src/BaseClasses/Base.ts#L6">BaseClasses/Base.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/9ccf270/src/BaseClasses/Base.ts#L9">BaseClasses/Base.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -320,7 +400,22 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
+						<a href="../enums/api_phase.html" class="tsd-kind-icon">API_<wbr>PHASE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/api_status.html" class="tsd-kind-icon">API_<wbr>STATUS</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/bolt_func.html" class="tsd-kind-icon">BOLT_<wbr>FUNC</a>
+					</li>
+					<li class=" tsd-kind-enum">
 						<a href="../enums/constants.html" class="tsd-kind-icon">CONSTANTS</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/event.html" class="tsd-kind-icon">EVENT</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/log_type.html" class="tsd-kind-icon">LOG_<wbr>TYPE</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="../enums/pins.html" class="tsd-kind-icon">PINS</a>
@@ -345,14 +440,26 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="analog.html#api" class="tsd-kind-icon">api</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-static">
-								<a href="analog.html#devices" class="tsd-kind-icon">devices</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="analog.html#eventlisteners" class="tsd-kind-icon">event<wbr>Listeners</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="analog.html#showloader" class="tsd-kind-icon">show<wbr>Loader</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="analog.html#currentdevice" class="tsd-kind-icon">Current<wbr>Device</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="analog.html#devices" class="tsd-kind-icon">Devices</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="analog.html#eventlisteners-1" class="tsd-kind-icon">Event<wbr>Listeners</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="analog.html#isnode" class="tsd-kind-icon">Is<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="analog.html#log" class="tsd-kind-icon">log</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="analog.html#loopread" class="tsd-kind-icon">loop<wbr>Read</a>
@@ -373,11 +480,17 @@
 					<li class=" tsd-kind-class">
 						<a href="base.html" class="tsd-kind-icon">Base</a>
 					</li>
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-is-not-exported">
 						<a href="devices.html" class="tsd-kind-icon">Devices</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="digital.html" class="tsd-kind-icon">Digital</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="eventlisteners.html" class="tsd-kind-icon">Event<wbr>Listeners</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="pubsub.html" class="tsd-kind-icon">Pub<wbr>Sub</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="uart.html" class="tsd-kind-icon">UART</a>
@@ -395,7 +508,13 @@
 						<a href="../interfaces/idigitalreturn.html" class="tsd-kind-icon">IDigital<wbr>Return</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ieventlisteners.html" class="tsd-kind-icon">IEvent<wbr>Listeners</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="../interfaces/iresponsedata.html" class="tsd-kind-icon">IResponse<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="../globals.html#instance" class="tsd-kind-icon">instance</a>
 					</li>
 				</ul>
 			</nav>
