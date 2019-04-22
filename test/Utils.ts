@@ -10,4 +10,10 @@ export default class Utils {
 
     return text;
   }
+
+  public static setTimeoutAsync(timeout: number) {
+    return new Promise((res) => {
+      setTimeout(res, timeout);
+    });
+  }
 }

@@ -108,7 +108,7 @@ describe('test digital apis', () => {
       return (cbCount += 1) < 5;
     };
     await digital.loopRead([PINS.zero, PINS.one], 4000, cb);
-    expect(digital.api.getData).toBeCalledTimes(5);
+    expect(digital.read).toBeCalledTimes(5);
     expect(cbCount).toBe(5);
   });
 

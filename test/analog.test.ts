@@ -39,7 +39,7 @@ describe('test analog apis', () => {
       return (cbCount += 1) < 5;
     };
     await analog.loopRead(4000, cb);
-    expect(analog.api.getData).toBeCalledTimes(5);
+    expect(analog.read).toBeCalledTimes(5);
     expect(cbCount).toBe(5);
   });
 

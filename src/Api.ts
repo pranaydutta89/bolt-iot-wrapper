@@ -58,7 +58,7 @@ export default class Api extends Base {
       msg = `Bolt cloud responded with failure: ${data.value}`;
       this.eventListeners.run(EVENT.message, LOG_TYPE.error, msg);
       this.log(LOG_TYPE.error, msg);
-      return Promise.reject();
+      return Promise.reject(msg);
     } catch (e) {
       this.eventListeners.run(EVENT.message, LOG_TYPE.error, e.message);
       this.log(LOG_TYPE.error, e.message);
