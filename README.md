@@ -13,7 +13,7 @@
 
  ```javascript
  // import module
- import {Devices,Enums} from 'bolt-iot-wrapper';
+ import {Devices,Enums,PubSub} from 'bolt-iot-wrapper';
 
  ```
 
@@ -61,6 +61,12 @@
   instance.Utility.restart()
 
   instance.Utility.version()
+
+  //E) Api Callback 
+  
+  PubSub.api({cb}) // the callback will get fired with phases of api calls
+
+  PubSub.message({cb}) // the callback will get fired when libary would send some message to client
 
 ```
 
