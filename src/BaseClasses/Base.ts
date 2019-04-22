@@ -26,6 +26,7 @@ export default abstract class Base {
     return typeof process !== 'undefined' && process.release && process.release.name === 'node';
   }
 
+  /* istanbul ignore next */
   protected log(type: LOG_TYPE, message: string) {
     switch (type) {
       case LOG_TYPE.info:

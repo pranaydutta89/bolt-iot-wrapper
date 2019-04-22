@@ -1,6 +1,6 @@
-import Api from "../src/Api";
-import Utils from "./Utils";
-import { BOLT_FUNC } from "../src/Enums";
+import Api from '../src/Api';
+import { BOLT_FUNC } from '../src/Enums';
+import Utils from './Utils';
 
 describe('test api without loader ', () => {
   let api: Api;
@@ -8,7 +8,7 @@ describe('test api without loader ', () => {
   beforeEach(() => {
     api = new Api({
       key: Utils.randomString(),
-      name: Utils.randomString()
+      name: Utils.randomString(),
     });
   });
 
@@ -25,7 +25,7 @@ describe('test api without loader ', () => {
     // @ts-ignore
     jest.spyOn(api, 'fetch').mockImplementation(async () => {
       return {
-        json: async () => fetchData
+        json: async () => fetchData,
       };
     });
     const data = await api.getData(BOLT_FUNC.digitalMultiRead);
@@ -42,14 +42,13 @@ describe('test api without loader ', () => {
     // @ts-ignore
     jest.spyOn(api, 'fetch').mockImplementation(async () => {
       return {
-        json: async () => fetchData
+        json: async () => fetchData,
       };
     });
     try {
       const data = await api.getData(BOLT_FUNC.digitalMultiRead);
-      expect(true).toBe(false)
-    }
-    catch (e) {
+      expect(true).toBe(false);
+    } catch (e) {
       expect(e.indexOf('Bolt cloud responded with failure')).not.toBe(-1);
     }
   });
@@ -59,19 +58,16 @@ describe('test api without loader ', () => {
     await Utils.setTimeoutAsync(4000);
     // @ts-ignore
     jest.spyOn(api, 'fetch').mockImplementation(async () => {
-      throw new Error('Failed')
+      throw new Error('Failed');
     });
     try {
       const data = await api.getData(BOLT_FUNC.digitalMultiRead);
-      expect(true).toBe(false)
-    }
-    catch (e) {
-      expect(e).toBe("Failed");
+      expect(true).toBe(false);
+    } catch (e) {
+      expect(e).toBe('Failed');
     }
   });
 });
-
-
 
 describe('test api with loader', () => {
   let api: Api;
@@ -79,15 +75,14 @@ describe('test api with loader', () => {
   beforeEach(() => {
     api = new Api({
       key: Utils.randomString(),
-      name: Utils.randomString()
-    }, true);
+      name: Utils.randomString(),
+    },            true);
   });
 
   test('event listener should get called', async () => {
 
-
     await Utils.setTimeoutAsync(4000);
-    //@ts-ignore
+    // @ts-ignore
     jest.spyOn(api.eventListeners, 'run').mockImplementation(() => {
       return;
     });
@@ -99,15 +94,14 @@ describe('test api with loader', () => {
     // @ts-ignore
     jest.spyOn(api, 'fetch').mockImplementation(async () => {
       return {
-        json: async () => fetchData
+        json: async () => fetchData,
       };
     });
 
     await api.getData(BOLT_FUNC.digitalMultiRead);
 
-    //@ts-ignore
+    // @ts-ignore
     expect(api.eventListeners.run).toBeCalledTimes(3);
-
 
   });
 });

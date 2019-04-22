@@ -1,7 +1,7 @@
-import { IDigitalReturn } from './../dist/Interfaces.d';
-import { API_STATUS, PINS, STATE, BOLT_FUNC } from '../src/Enums';
+import { API_STATUS, BOLT_FUNC, PINS, STATE } from '../src/Enums';
 import { Analog, Devices as instance, Digital, Utility } from '../src/exports';
 import { IDigitalParam } from '../src/Interfaces';
+import { IDigitalReturn } from './../dist/Interfaces.d';
 describe('test digital apis', () => {
 
   let digital: Digital;
@@ -26,12 +26,12 @@ describe('test digital apis', () => {
     });
     const data = await digital.write({
       pin: PINS.zero,
-      state: STATE.high
+      state: STATE.high,
     });
+    // @ts-ignore
     expect(digital.api.getData).toBeCalledTimes(1);
     expect(data).toBeDefined();
   });
-
 
   test('Write should work properly for multiple pin', async () => {
 
@@ -43,11 +43,12 @@ describe('test digital apis', () => {
     });
     const data = await digital.write([{
       pin: PINS.zero,
-      state: STATE.high
+      state: STATE.high,
     }, {
       pin: PINS.one,
-      state: STATE.low
+      state: STATE.low,
     }]);
+    // @ts-ignore
     expect(digital.api.getData).toBeCalledTimes(1);
     expect(data).toBeDefined();
   });
@@ -62,6 +63,7 @@ describe('test digital apis', () => {
       };
     });
     const data = await digital.read(PINS.zero) as IDigitalParam;
+    // @ts-ignore
     expect(digital.api.getData).toBeCalledTimes(1);
     expect(Object.keys(data).length).toBe(2);
     expect(data.pin).toBe(PINS.zero);
@@ -78,6 +80,7 @@ describe('test digital apis', () => {
       };
     });
     const data = await digital.read([PINS.zero, PINS.one]) as IDigitalParam[];
+    // @ts-ignore
     expect(digital.api.getData).toBeCalledTimes(1);
     expect(data.length).toBe(2);
     expect(data[0].pin).toBe(PINS.zero);
@@ -87,8 +90,9 @@ describe('test digital apis', () => {
   });
 
   test('loop read should work properly', async () => {
-    expect(await digital.loopRead([PINS.zero, PINS.one], 1000,
-      (data) => { return true })).toBeUndefined();
+    expect(await digital.loopRead([PINS.zero, PINS.one],
+      // tslint:disable-next-line: align
+      1000, (data: any) => true)).toBeUndefined();
     jest.spyOn(digital, 'read').mockImplementation(async () => {
       return [{
         pin: PINS.zero,

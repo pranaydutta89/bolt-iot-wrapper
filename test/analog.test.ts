@@ -22,13 +22,14 @@ describe('test analog apis', () => {
       };
     });
     const data = await analog.read();
+    // @ts-ignore
     expect(analog.api.getData).toBeCalledTimes(1);
     expect(data).toBeDefined();
     expect(data).toBe(10);
   });
 
   test('loop read should work properly', async () => {
-    expect(await analog.loopRead(1000, (data) => { return true })).toBeUndefined();
+    expect(await analog.loopRead(1000, (data: any) => true)).toBeUndefined();
     jest.spyOn(analog, 'read').mockImplementation(async () => {
       return 10;
     });

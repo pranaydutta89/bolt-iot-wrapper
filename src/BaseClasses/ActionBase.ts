@@ -4,6 +4,16 @@ import { IDeviceDetails } from '../Interfaces';
 import Base from './Base';
 
 export default abstract class ActionBase extends Base {
+  public eventListeners = new EventListeners();
+
+  private currentDevice: IDeviceDetails | null = null;
+  constructor(deviceName: string) {
+    super();
+    const tempDeivce = this.Devices.find(r => r.name === deviceName);
+    if (deviceName && tempDeivce) {
+      this.currentDevice = tempDeivce;
+    }
+  }
 
   protected set CurrentDevice(val: IDeviceDetails) {
     this.currentDevice = val;
@@ -16,15 +26,6 @@ export default abstract class ActionBase extends Base {
     const msg = 'Cloud responded with failure';
     this.eventListeners.run(EVENT.message, LOG_TYPE.error, msg);
     this.log(LOG_TYPE.error, msg);
-  }
-  public eventListeners = new EventListeners();
-
-  private currentDevice: IDeviceDetails | null = null;
-  constructor(deviceName: string) {
-    super();
-    const tempDeivce = this.Devices.find(r => r.name === deviceName);
-    if (deviceName && tempDeivce) {
-      this.currentDevice = tempDeivce;
-    }
+    throw new Error('msg');
   }
 }

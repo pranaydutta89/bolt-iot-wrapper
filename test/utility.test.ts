@@ -1,59 +1,61 @@
-import { API_STATUS } from '../src/Enums';
-import { Analog, Devices as instance, Digital, Utility } from '../src/exports';
+import { Devices as instance, Digital, Utility } from '../src/exports';
 import Utils from './Utils';
 
 describe('test utility apis', () => {
 
-  let Utility: Utility;
+  let utility: Utility;
   beforeAll(() => {
-    Utility = instance.add('demo', 'demo').Utility;
+    utility = instance.add('demo', 'demo').Utility;
   });
 
   test('functions should be intact', () => {
-    expect(Utility.isOnline).toBeDefined();
-    expect(Utility.restart).toBeDefined();
-    expect(Utility.version).toBeDefined();
+    expect(utility.isOnline).toBeDefined();
+    expect(utility.restart).toBeDefined();
+    expect(utility.version).toBeDefined();
   });
 
   test('isOnline should work properly', async () => {
     // @ts-ignore
-    jest.spyOn(Utility.api, 'getData').mockImplementation(async () => {
+    jest.spyOn(utility.api, 'getData').mockImplementation(async () => {
       return {
         success: 1,
         value: 'online',
       };
     });
 
-    expect(await Utility.isOnline()).toBe(true);
-    expect(Utility.api.getData).toBeCalledTimes(1);
+    expect(await utility.isOnline()).toBe(true);
+    // @ts-ignore
+    expect(utility.api.getData).toBeCalledTimes(1);
   });
 
   test('restart should work Properly', async () => {
     // @ts-ignore
-    jest.spyOn(Utility.api, 'getData').mockImplementation(async () => {
+    jest.spyOn(utility.api, 'getData').mockImplementation(async () => {
       return {
         success: 1,
         value: 'Restarted',
       };
     });
 
-    expect(await Utility.restart()).toBe(true);
-    expect(Utility.api.getData).toBeCalledTimes(1);
+    expect(await utility.restart()).toBe(true);
+    // @ts-ignore
+    expect(utility.api.getData).toBeCalledTimes(1);
   });
 
   test('version should work properly', async () => {
 
     const rndStr = Utils.randomString();
     // @ts-ignore
-    jest.spyOn(Utility.api, 'getData').mockImplementation(async () => {
+    jest.spyOn(utility.api, 'getData').mockImplementation(async () => {
       return {
         success: 1,
         value: rndStr,
       };
     });
 
-    expect(await Utility.version()).toBe(rndStr);
-    expect(Utility.api.getData).toBeCalledTimes(1);
+    expect(await utility.version()).toBe(rndStr);
+    // @ts-ignore
+    expect(utility.api.getData).toBeCalledTimes(1);
 
   });
 
