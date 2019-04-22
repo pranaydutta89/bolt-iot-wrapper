@@ -32,6 +32,26 @@ describe('test api without loader ', () => {
     expect(data).toEqual(fetchData);
   });
 
+  test('negative test for less time', async () => {
+
+    const fetchData = {
+      success: 1,
+      value: '10',
+    };
+    // @ts-ignore
+    jest.spyOn(api, 'fetch').mockImplementation(async () => {
+      return {
+        json: async () => fetchData,
+      };
+    });
+    try {
+      const data = await api.getData(BOLT_FUNC.digitalMultiRead);
+      expect(true).toBe(false);
+    } catch (e) {
+      expect(true).toEqual(true);
+    }
+  });
+
   test('Negative getData', async () => {
 
     await Utils.setTimeoutAsync(4000);
@@ -76,7 +96,8 @@ describe('test api with loader', () => {
     api = new Api({
       key: Utils.randomString(),
       name: Utils.randomString(),
-    },            true);
+      // tslint:disable-next-line: align
+    }, true);
   });
 
   test('event listener should get called', async () => {
