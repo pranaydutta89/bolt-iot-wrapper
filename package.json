@@ -30,26 +30,26 @@
   },
   "homepage": "https://github.com/pranaydutta89/bolt-iot-wrapper#readme",
   "devDependencies": {
-    "@types/jest": "24.0.11",
-    "@types/node-fetch": "1.6.9",
-    "jest": "24.7.1",
+    "@types/jest": "^24.0.11",
+    "@types/node-fetch": "^1.6.9",
+    "jest": "^24.7.1",
     "np": "*",
-    "rimraf": "2.6.3",
-    "rollup": "1.6.0",
-    "rollup-plugin-commonjs": "9.2.1",
-    "rollup-plugin-node-resolve": "4.0.1",
-    "rollup-plugin-typescript": "1.0.0",
-    "rollup-plugin-uglify": "6.0.2",
-    "ts-jest": "24.0.2",
-    "tslint": "5.14.0",
-    "tslint-config-airbnb": "5.11.1",
-    "typedoc": "0.14.2",
-    "typescript": "3.3.3333"
+    "rimraf": "^2.6.3",
+    "rollup": "^1.6.0",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-typescript": "^1.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.14.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "node-fetch": "2.3.0",
-    "promise-polyfill": "8.1.0",
-    "whatwg-fetch": "2.0.4"
+    "node-fetch": "^2.3.0",
+    "promise-polyfill": "^8.1.0",
+    "whatwg-fetch": "^2.0.4"
   },
   "files": [
     "umd",
