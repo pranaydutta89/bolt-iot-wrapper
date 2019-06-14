@@ -1,6 +1,6 @@
 {
   "name": "bolt-iot-wrapper",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "bolt iot api wrappers",
   "main": "dist/exports.js",
   "scripts": {
