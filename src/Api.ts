@@ -18,7 +18,7 @@ export default class Api extends Base {
     }
   }
 
-  public async getData(functi: BOLT_FUNC, query?: string) {
+  public async getData(functi: BOLT_FUNC, query?: string): Promise<IResponseData> {
     let msg;
     try {
       let fullUrl;
@@ -36,10 +36,12 @@ export default class Api extends Base {
       // below will give a gap of 3 seconds between api calls
       if (Api.lastApiCallTimeStamp &&
         (nowDate - Api.lastApiCallTimeStamp) < CONSTANTS.defaultApiDiff) {
-        msg = `Frequent API call diff should be:${CONSTANTS.defaultApiDiff}`;
-        this.eventListeners.run(EVENT.message, LOG_TYPE.error, msg);
-        this.log(LOG_TYPE.error, msg);
-        return Promise.reject(msg);
+        // msg = `Frequent API call diff should be:${CONSTANTS.defaultApiDiff}`;
+        // this.eventListeners.run(EVENT.message, LOG_TYPE.error, msg);
+        // this.log(LOG_TYPE.error, msg);
+        // return Promise.reject(msg);
+        await this.setTimeoutAsync(nowDate - Api.lastApiCallTimeStamp);
+        return await this.getData(functi, query);
       }
 
       Api.lastApiCallTimeStamp = nowDate;
