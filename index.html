@@ -2,18 +2,18 @@
 
 <head>
   <!-- CDN script tag-->
-  <script src="https://unpkg.com/bolt-iot-wrapper@1.1.2/umd/boltIotWrapper.min.js"></script>
+  <script src="./umd/boltIotWrapper.min.js"></script>
 </head>
 
 <body>
   <h1>JS Test</h1>
   <script>
-    let deviceName = "BOLTXXXX";
-    let deviceKey = "XXXXX";
+    var deviceName = "BOLTXXXX";
+    var deviceKey = "XXXXX";
     boltApi.Devices.add(deviceName, deviceKey);
-    const bolt = boltApi.Devices.read(deviceName, deviceKey);
-    debugger
-    let val = bolt.Analog.read();
+    var bolt = boltApi.Devices.read(deviceName, deviceKey);
+
+    var val = bolt.Analog.read();
     val = bolt.Analog.read();
     val = bolt.Analog.read();
     val = bolt.Analog.read();

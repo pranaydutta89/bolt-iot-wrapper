@@ -1,3 +1,4 @@
+import 'core-js/features/array/find';
 import 'promise-polyfill/dist/polyfill';
 import 'whatwg-fetch';
 import Analog from './Action/Analog';
