@@ -4,7 +4,7 @@ export enum PINS {
   two,
   three,
   four,
-  A0 = 'A0'
+  A0 = 'A0',
 }
 
 export enum STATE {

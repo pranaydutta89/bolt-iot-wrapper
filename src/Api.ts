@@ -14,7 +14,7 @@ export default class Api extends Base {
     if (this.IsNode) {
       this.fetch = nodeFetch;
     } else {
-      this.fetch = window.fetch;
+      this.fetch = window.fetch.bind(window);
     }
   }
 
@@ -36,10 +36,8 @@ export default class Api extends Base {
       // below will give a gap of 3 seconds between api calls
       if (Api.lastApiCallTimeStamp &&
         (nowDate - Api.lastApiCallTimeStamp) < CONSTANTS.defaultApiDiff) {
-        // msg = `Frequent API call diff should be:${CONSTANTS.defaultApiDiff}`;
-        // this.eventListeners.run(EVENT.message, LOG_TYPE.error, msg);
-        // this.log(LOG_TYPE.error, msg);
-        // return Promise.reject(msg);
+
+        // this will queue up request
         await this.setTimeoutAsync(nowDate - Api.lastApiCallTimeStamp);
         return await this.getData(functi, query);
       }
