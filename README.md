@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/pranaydutta89/bolt-iot-wrapper.svg?branch=master)](https://travis-ci.org/pranaydutta89/bolt-iot-wrapper)
 [![npm version](https://badge.fury.io/js/bolt-iot-wrapper.svg)](https://badge.fury.io/js/bolt-iot-wrapper)
 
+[![NPM](https://nodei.co/npm/bolt-iot-wrapper.png?downloads=true)](https://nodei.co/npm/bolt-iot-wrapper/)
 ### Usage:-
 
 ##### Nodejs:
