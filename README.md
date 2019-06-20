@@ -25,7 +25,7 @@
 ```
 ###### Browser Compatibility
 1) IE 9 and above
-2) Another other browser
+2) Any other browser
 
 ##### API
 
