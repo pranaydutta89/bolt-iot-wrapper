@@ -1,5 +1,5 @@
 import { API_STATUS } from '../src/Enums';
-import { Analog, Devices as instance, Digital, Utility } from '../src/exports';
+import { Analog, Devices as instance } from '../src/exports';
 describe('test analog apis', () => {
 
   let analog: Analog;

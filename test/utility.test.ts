@@ -1,4 +1,4 @@
-import { Devices as instance, Digital, Utility } from '../src/exports';
+import { Devices as instance, Utility } from '../src/exports';
 import Utils from './Utils';
 
 describe('test utility apis', () => {

@@ -1,5 +1,5 @@
-import { API_STATUS, BOLT_FUNC, PINS, STATE } from '../src/Enums';
-import { Analog, Devices as instance, Digital, Utility } from '../src/exports';
+import { API_STATUS, PINS, STATE } from '../src/Enums';
+import { Devices as instance, Digital } from '../src/exports';
 import { IDigitalParam } from '../src/Interfaces';
 import { IDigitalReturn } from './../dist/Interfaces.d';
 describe('test digital apis', () => {
