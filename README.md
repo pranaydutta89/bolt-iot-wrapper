@@ -23,6 +23,9 @@
 <!-- CDN script tag-->
 <script src="https://unpkg.com/bolt-iot-wrapper/umd/boltIotWrapper.min.js"></script>
 ```
+###### Browser Compatibility
+1) IE 9 and above
+2) Another other browser
 
 ##### API
 
