@@ -2,6 +2,7 @@
 ## Simple Bolt IoT Api wrapper which also takes care of api call restrictions
 
 [![Build Status](https://travis-ci.org/pranaydutta89/bolt-iot-wrapper.svg?branch=master)](https://travis-ci.org/pranaydutta89/bolt-iot-wrapper)
+[![npm version](https://badge.fury.io/js/bolt-iot-wrapper.svg)](https://badge.fury.io/js/bolt-iot-wrapper)
 
 ### Usage:-
 
