@@ -1,6 +1,7 @@
 import Api from '../Api';
 import ActionBase from '../BaseClasses/ActionBase';
-import { API_STATUS, BOLT_FUNC, CONSTANTS, EVENT, LOG_TYPE } from '../Enums';
+import { API_STATUS, BOLT_FUNC, CONSTANTS, EVENT, LOG_TYPE, PINS } from '../Enums';
+import { IPWMParam } from '../Interfaces';
 
 export default class Analog extends ActionBase {
 
@@ -38,5 +39,22 @@ export default class Analog extends ActionBase {
   public async read(): Promise<number> {
     const data = await this.api.getData(BOLT_FUNC.analogRead, 'pin=A0');
     return parseInt(data.value, 10);
+  }
+
+  public async pwm(input: IPWMParam | IPWMParam[]) {
+    if (input instanceof Array) {
+      const pins: PINS[] = [];
+      const values: number[] = [];
+      input.forEach((val) => {
+        pins.push(val.pin);
+        values.push(val.value);
+      });
+
+      return await
+        this.api.
+          getData(BOLT_FUNC.analogWrite, `pin=${pins.join(',')}&value=${values.join(',')}`);
+    }
+
+    return await this.api.getData(BOLT_FUNC.analogWrite, `pin=${input.pin}&value=${input.value}`);
   }
 }

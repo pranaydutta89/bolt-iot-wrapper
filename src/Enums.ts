@@ -45,6 +45,7 @@ export enum BOLT_FUNC {
   digitalMultiWrtie = 'digitalMultiWrite',
   digitalWrite = 'digitalWrite',
   analogRead = 'analogRead',
+  analogWrite = 'analogWrite',
   serialBegin = 'serialBegin',
   serialWrite = 'serialWrite',
   serialRead = 'serialRead',

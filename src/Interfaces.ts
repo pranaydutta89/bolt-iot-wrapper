@@ -5,6 +5,11 @@ export interface IDigitalParam {
   state: STATE;
 }
 
+export interface IPWMParam {
+  pin: PINS;
+  value: number;
+}
+
 export interface IDeviceDetails {
   name: string;
   key: string;

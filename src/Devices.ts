@@ -54,6 +54,24 @@ class Devices extends Base {
     this.log(LOG_TYPE.error, mesg);
     return;
   }
+
+  public addAndRead(deviceName: string, deviceKey: string) {
+    if (deviceName && deviceKey &&
+      typeof deviceName === 'string' && typeof deviceKey === 'string') {
+      const checkExisting = this.Devices.find(r => r.name === deviceName);
+      if (!checkExisting) {
+        this.Devices.push({
+          key: deviceKey,
+          name: deviceName,
+        });
+      }
+      return this.read(deviceName);
+    }
+    const mesg = 'Device details are invalid';
+    this.eventListeners.run(EVENT.message, LOG_TYPE.error, mesg);
+    this.log(LOG_TYPE.error, mesg);
+    return;
+  }
 }
 
 const instance = new Devices();
