@@ -107,6 +107,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="devices.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="devices.html#addandread" class="tsd-kind-icon">add<wbr>And<wbr>Read</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="devices.html#isdeviceadded" class="tsd-kind-icon">is<wbr>Device<wbr>Added</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-not-exported"><a href="devices.html#log" class="tsd-kind-icon">log</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="devices.html#read" class="tsd-kind-icon">read</a></li>
@@ -128,7 +129,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/20a8199/src/Devices.ts#L10">Devices.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/0da34bb/src/Devices.ts#L10">Devices.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="devices.html" class="tsd-signature-type">Devices</a></h4>
@@ -144,7 +145,7 @@
 					<div class="tsd-signature tsd-kind-icon">event<wbr>Listeners<span class="tsd-signature-symbol">:</span> <a href="eventlisteners.html" class="tsd-signature-type">EventListeners</a><span class="tsd-signature-symbol"> =&nbsp;new EventListeners()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/20a8199/src/Devices.ts#L10">Devices.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/0da34bb/src/Devices.ts#L10">Devices.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -162,7 +163,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#devices-1">Devices</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/20a8199/src/BaseClasses/Base.ts#L21">BaseClasses/Base.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/0da34bb/src/BaseClasses/Base.ts#L21">BaseClasses/Base.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/idevicedetails.html" class="tsd-signature-type">IDeviceDetails</a><span class="tsd-signature-symbol">[]</span></h4>
@@ -180,7 +181,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#eventlisteners-1">EventListeners</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/20a8199/src/BaseClasses/Base.ts#L18">BaseClasses/Base.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/0da34bb/src/BaseClasses/Base.ts#L18">BaseClasses/Base.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/ieventlisteners.html" class="tsd-signature-type">IEventListeners</a><span class="tsd-signature-symbol">[]</span></h4>
@@ -198,7 +199,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#isnode">IsNode</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/20a8199/src/BaseClasses/Base.ts#L25">BaseClasses/Base.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/0da34bb/src/BaseClasses/Base.ts#L25">BaseClasses/Base.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -218,7 +219,36 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/20a8199/src/Devices.ts#L36">Devices.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/0da34bb/src/Devices.ts#L36">Devices.ts:36</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>deviceName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>deviceKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">object</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="addandread" class="tsd-anchor"></a>
+					<h3>add<wbr>And<wbr>Read</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>And<wbr>Read<span class="tsd-signature-symbol">(</span>deviceName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, deviceKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/0da34bb/src/Devices.ts#L58">Devices.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -247,7 +277,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/20a8199/src/Devices.ts#L31">Devices.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/0da34bb/src/Devices.ts#L31">Devices.ts:31</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -271,7 +301,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#log">log</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/20a8199/src/BaseClasses/Base.ts#L30">BaseClasses/Base.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/0da34bb/src/BaseClasses/Base.ts#L30">BaseClasses/Base.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -297,7 +327,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/20a8199/src/Devices.ts#L15">Devices.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/0da34bb/src/Devices.ts#L15">Devices.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -327,7 +357,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#settimeoutasync">setTimeoutAsync</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/20a8199/src/BaseClasses/Base.ts#L9">BaseClasses/Base.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/pranaydutta89/bolt-iot-wrapper/blob/0da34bb/src/BaseClasses/Base.ts#L9">BaseClasses/Base.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -415,6 +445,9 @@
 								<a href="devices.html#add" class="tsd-kind-icon">add</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="devices.html#addandread" class="tsd-kind-icon">add<wbr>And<wbr>Read</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="devices.html#isdeviceadded" class="tsd-kind-icon">is<wbr>Device<wbr>Added</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected tsd-is-not-exported">
@@ -456,6 +489,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/ieventlisteners.html" class="tsd-kind-icon">IEvent<wbr>Listeners</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ipwmparam.html" class="tsd-kind-icon">IPWMParam</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/iresponsedata.html" class="tsd-kind-icon">IResponse<wbr>Data</a>
